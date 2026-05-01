@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>🌴 몰디브 협업 플래너 × Trello</title>
+<title>ð´ ëª°ëë¸ íì íëë Ã Trello</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-/* ── TOKENS ── */
+/* ââ TOKENS ââ */
 :root{
   --bg:#f8fafc;--s1:#ffffff;--s2:#f1f5f9;--s3:#e2e8f0;
   --border:#e2e8f0;--border2:#cbd5e1;
@@ -26,7 +26,7 @@ button,input,textarea,select{font-family:inherit;outline:none;border:none}
 a{text-decoration:none}
 img{display:block}
 
-/* ── HERO ── */
+/* ââ HERO ââ */
 .hero{background:linear-gradient(135deg,#0c4a6e,#0e7490 60%,#0891b2);padding:20px 18px 16px;text-align:center;position:relative;overflow:hidden}
 .hero::after{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");pointer-events:none}
 .hero-inner{position:relative;z-index:1}
@@ -38,7 +38,7 @@ img{display:block}
 .pill.ok{background:rgba(5,150,105,.35);border-color:rgba(52,211,153,.4)}
 .pill.warn{background:rgba(217,119,6,.35);border-color:rgba(251,191,36,.4)}
 
-/* ── TRELLO STATUS BAR ── */
+/* ââ TRELLO STATUS BAR ââ */
 .trello-bar{display:flex;align-items:center;gap:8px;padding:8px 14px;background:#fff;border-bottom:1px solid var(--border);font-size:11px}
 .trello-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;transition:.3s}
 .trello-dot.connected{background:#10b981;box-shadow:0 0 0 3px rgba(16,185,129,.2)}
@@ -48,14 +48,14 @@ img{display:block}
 .trello-label{flex:1;color:var(--sec)}
 .trello-sync-btn{padding:4px 10px;background:var(--trello);color:#fff;border-radius:6px;font-size:10px;font-weight:700;cursor:pointer;touch-action:manipulation}
 
-/* ── TOAST ── */
+/* ââ TOAST ââ */
 #toast{position:fixed;top:16px;left:50%;transform:translateX(-50%) translateY(-120%);z-index:9999;background:#0f172a;color:#fff;padding:9px 18px;border-radius:10px;font-size:12px;font-weight:600;display:flex;align-items:center;gap:6px;transition:transform .3s;white-space:nowrap;max-width:90vw}
 #toast.show{transform:translateX(-50%) translateY(0)}
 #toast.success{background:#059669}
 #toast.error{background:#e11d48}
 #toast.info{background:var(--trello)}
 
-/* ── TABS ── */
+/* ââ TABS ââ */
 .tab-bar{position:fixed;bottom:0;left:0;right:0;z-index:998;background:#fff;border-top:1px solid var(--border);display:flex;box-shadow:0 -2px 12px rgba(0,0,0,.06)}
 .tb{flex:1;display:flex;flex-direction:column;align-items:center;gap:1px;padding:7px 0 8px;background:transparent;color:var(--muted);font-size:9px;font-weight:600;touch-action:manipulation;cursor:pointer;transition:.15s;border-top:2px solid transparent}
 .tb.active{color:var(--accent);border-top-color:var(--accent)}
@@ -64,7 +64,7 @@ img{display:block}
 .panel.active{display:block}
 @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 
-/* ── CARDS ── */
+/* ââ CARDS ââ */
 .card{background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:14px;margin-bottom:11px;box-shadow:0 1px 4px rgba(0,0,0,.04);transition:border-color .2s}
 .card.sel{border:2px solid var(--accent);background:#f0f9ff}
 .card.trello-synced{border-color:#10b981}
@@ -206,14 +206,14 @@ h2{font-size:15px;font-weight:800;margin-bottom:10px}
 <!-- HERO -->
 <div class="hero">
   <div class="hero-inner">
-    <h1>🌴 몰디브 협업 플래너</h1>
-    <div class="hero-sub">가연 &amp; 영욱 · 2026 Babymoon ✨ · Trello 실시간 연동</div>
+    <h1>ð´ ëª°ëë¸ íì íëë</h1>
+    <div class="hero-sub">ê°ì° &amp; ìì± Â· 2026 Babymoon â¨ Â· Trello ì¤ìê° ì°ë</div>
     <div class="hero-pills">
-      <span class="pill">🤰 임신 20주차</span>
-      <span class="pill">📅 3박 4일</span>
-      <span class="pill">✈️ SIN → MLE</span>
-      <span class="pill trello" id="trello-pill">🔲 Trello 미연결</span>
-      <span class="pill ok">💾 자동저장</span>
+      <span class="pill">ð¤° ìì  20ì£¼ì°¨</span>
+      <span class="pill">ð 3ë° 4ì¼</span>
+      <span class="pill">âï¸ SIN â MLE</span>
+      <span class="pill trello" id="trello-pill">ð² Trello ë¯¸ì°ê²°</span>
+      <span class="pill ok">ð¾ ìëì ì¥</span>
     </div>
   </div>
 </div>
@@ -221,196 +221,196 @@ h2{font-size:15px;font-weight:800;margin-bottom:10px}
 <!-- TRELLO STATUS BAR -->
 <div class="trello-bar">
   <div class="trello-dot disconnected" id="trello-dot"></div>
-  <span class="trello-label" id="trello-status-text">Trello 미연결 — ⚙️ 설정 탭에서 연결하세요</span>
-  <button class="trello-sync-btn" id="trello-sync-now" style="display:none" onclick="syncAllToTrello()">🔄 전체 동기화</button>
+  <span class="trello-label" id="trello-status-text">Trello ë¯¸ì°ê²° â âï¸ ì¤ì  í­ìì ì°ê²°íì¸ì</span>
+  <button class="trello-sync-btn" id="trello-sync-now" style="display:none" onclick="syncAllToTrello()">ð ì ì²´ ëê¸°í</button>
 </div>
 
 <!-- TOAST -->
-<div id="toast">✅ 완료</div>
+<div id="toast">â ìë£</div>
 
-<!-- ════════════════ PANELS ════════════════ -->
+<!-- ââââââââââââââââ PANELS ââââââââââââââââ -->
 
-<!-- ⚙️ SETTINGS -->
+<!-- âï¸ SETTINGS -->
 <div class="panel active" id="panel-cfg">
-  <div class="sec-h"><h2>⚙️ Trello 연결 설정</h2><p>한 번만 설정하면 영구 저장됩니다</p></div>
+  <div class="sec-h"><h2>âï¸ Trello ì°ê²° ì¤ì </h2><p>í ë²ë§ ì¤ì íë©´ ìêµ¬ ì ì¥ë©ëë¤</p></div>
 
   <div class="info-card info-blue">
-    📌 아래 3가지 값을 입력하면 웹에서의 모든 변경사항(예약 상태, 의견)이 <strong>Trello 카드에 자동 댓글로 전송</strong>되고 가연이에게 <strong>실시간 푸시 알림</strong>이 갑니다.
+    ð ìë 3ê°ì§ ê°ì ìë ¥íë©´ ì¹ììì ëª¨ë  ë³ê²½ì¬í­(ìì½ ìí, ìê²¬)ì´ <strong>Trello ì¹´ëì ìë ëê¸ë¡ ì ì¡</strong>ëê³  ê°ì°ì´ìê² <strong>ì¤ìê° í¸ì ìë¦¼</strong>ì´ ê°ëë¤.
   </div>
 
   <div class="setting-group">
-    <div class="sg-title">🔑 Trello 인증 정보</div>
+    <div class="sg-title">ð Trello ì¸ì¦ ì ë³´</div>
 
-    <div class="step"><div class="step-num">1</div><div class="step-txt"><a href="https://trello.com/power-ups/admin" target="_blank">trello.com/power-ups/admin</a> 접속 → 앱 생성 → <strong>API Key</strong> 복사</div></div>
+    <div class="step"><div class="step-num">1</div><div class="step-txt"><a href="https://trello.com/power-ups/admin" target="_blank">trello.com/power-ups/admin</a> ì ì â ì± ìì± â <strong>API Key</strong> ë³µì¬</div></div>
     <div class="sg-field">
       <div class="sg-label">API KEY</div>
       <input class="sg-inp" id="cfg-key" type="text" placeholder="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" autocomplete="off">
-      <div class="sg-hint">32자리 영문+숫자 키</div>
+      <div class="sg-hint">32ìë¦¬ ìë¬¸+ì«ì í¤</div>
     </div>
 
-    <div class="step"><div class="step-num">2</div><div class="step-txt">같은 페이지에서 <strong>Token</strong> 링크 클릭 → 승인 → 토큰 값 복사 (가연이도 각자 토큰으로 설정)</div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-txt">ê°ì íì´ì§ìì <strong>Token</strong> ë§í¬ í´ë¦­ â ì¹ì¸ â í í° ê° ë³µì¬ (ê°ì°ì´ë ê°ì í í°ì¼ë¡ ì¤ì )</div></div>
     <div class="sg-field">
       <div class="sg-label">TOKEN</div>
       <input class="sg-inp" id="cfg-token" type="text" placeholder="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" autocomplete="off">
-      <div class="sg-hint">64자리 토큰 (절대 타인과 공유 금지)</div>
+      <div class="sg-hint">64ìë¦¬ í í° (ì ë íì¸ê³¼ ê³µì  ê¸ì§)</div>
     </div>
 
-    <div class="step"><div class="step-num">3</div><div class="step-txt">연동할 Trello 카드 URL에서 ID 추출: <code>trello.com/c/<strong>CARD_ID</strong>/...</code></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-txt">ì°ëí  Trello ì¹´ë URLìì ID ì¶ì¶: <code>trello.com/c/<strong>CARD_ID</strong>/...</code></div></div>
     <div class="sg-field">
       <div class="sg-label">CARD ID</div>
       <input class="sg-inp" id="cfg-card" type="text" placeholder="abcd1234" autocomplete="off">
-      <div class="sg-hint">카드 URL 중간 짧은 코드 (예: xK7mB2qN)</div>
+      <div class="sg-hint">ì¹´ë URL ì¤ê° ì§§ì ì½ë (ì: xK7mB2qN)</div>
     </div>
 
     <div class="sg-field">
-      <div class="sg-label">내 이름 (댓글 작성자)</div>
+      <div class="sg-label">ë´ ì´ë¦ (ëê¸ ìì±ì)</div>
       <select class="sg-inp" id="cfg-name">
-        <option value="영욱">영욱</option>
-        <option value="가연">가연</option>
+        <option value="ìì±">ìì±</option>
+        <option value="ê°ì°">ê°ì°</option>
       </select>
     </div>
 
-    <button class="btn btn-trello btn-full" id="btn-connect" onclick="connectTrello()">🔗 연결 테스트 & 저장</button>
+    <button class="btn btn-trello btn-full" id="btn-connect" onclick="connectTrello()">ð ì°ê²° íì¤í¸ & ì ì¥</button>
   </div>
 
   <div class="setting-group">
-    <div class="sg-title">🔔 알림 설정</div>
+    <div class="sg-title">ð ìë¦¼ ì¤ì </div>
     <div style="display:flex;flex-direction:column;gap:8px">
       <label style="display:flex;align-items:center;gap:8px;font-size:12px;cursor:pointer">
         <input type="checkbox" id="notify-booking" checked style="width:14px;height:14px">
-        예약 상태 변경 시 Trello 댓글
+        ìì½ ìí ë³ê²½ ì Trello ëê¸
       </label>
       <label style="display:flex;align-items:center;gap:8px;font-size:12px;cursor:pointer">
         <input type="checkbox" id="notify-comment" checked style="width:14px;height:14px">
-        의견 입력 시 Trello 댓글
+        ìê²¬ ìë ¥ ì Trello ëê¸
       </label>
       <label style="display:flex;align-items:center;gap:8px;font-size:12px;cursor:pointer">
         <input type="checkbox" id="notify-email" checked style="width:14px;height:14px">
-        예약 이메일 발송 시 Trello 댓글
+        ìì½ ì´ë©ì¼ ë°ì¡ ì Trello ëê¸
       </label>
       <label style="display:flex;align-items:center;gap:8px;font-size:12px;cursor:pointer">
         <input type="checkbox" id="notify-select" style="width:14px;height:14px">
-        항공/리조트 선택 시 Trello 댓글
+        í­ê³µ/ë¦¬ì¡°í¸ ì í ì Trello ëê¸
       </label>
     </div>
   </div>
 
   <div class="setting-group">
-    <div class="sg-title">🗂 데이터 관리</div>
+    <div class="sg-title">ð ë°ì´í° ê´ë¦¬</div>
     <div class="book-row">
-      <button class="btn btn-secondary btn-sm" onclick="exportData()">📤 내보내기</button>
-      <button class="btn btn-ghost btn-sm" onclick="importData()">📥 불러오기</button>
-      <button class="btn btn-ghost btn-sm" onclick="if(confirm('초기화?')){resetAll()}">🗑 초기화</button>
+      <button class="btn btn-secondary btn-sm" onclick="exportData()">ð¤ ë´ë³´ë´ê¸°</button>
+      <button class="btn btn-ghost btn-sm" onclick="importData()">ð¥ ë¶ë¬ì¤ê¸°</button>
+      <button class="btn btn-ghost btn-sm" onclick="if(confirm('ì´ê¸°í?')){resetAll()}">ð ì´ê¸°í</button>
     </div>
   </div>
 </div>
 
-<!-- 📊 DASHBOARD -->
+<!-- ð DASHBOARD -->
 <div class="panel" id="panel-dash">
-  <div class="sec-h"><h2>📊 실시간 대시보드</h2><p>현재 선택 요약 · 예산 · 예약 현황</p></div>
+  <div class="sec-h"><h2>ð ì¤ìê° ëìë³´ë</h2><p>íì¬ ì í ìì½ Â· ìì° Â· ìì½ íí©</p></div>
   <div class="kpi-grid" id="kpi-grid"></div>
   <div class="card">
-    <h3 style="margin-bottom:9px">🤰 임산부 쾌적 점수</h3>
-    <div class="bar-wrap"><div class="bar-top"><span>😊 만족도</span><span id="sc-sat">—</span></div><div class="bar-track"><div class="bar-fill" id="bar-sat" style="width:0;background:#0891b2"></div></div></div>
-    <div class="bar-wrap"><div class="bar-top"><span>😴 피로도</span><span id="sc-fat">—</span></div><div class="bar-track"><div class="bar-fill" id="bar-fat" style="width:0;background:#e11d48"></div></div></div>
-    <div class="bar-wrap"><div class="bar-top"><span>🌟 종합 점수</span><span id="sc-preg">—</span></div><div class="bar-track"><div class="bar-fill" id="bar-preg" style="width:0;background:#059669"></div></div></div>
+    <h3 style="margin-bottom:9px">ð¤° ìì°ë¶ ì¾ì  ì ì</h3>
+    <div class="bar-wrap"><div class="bar-top"><span>ð ë§ì¡±ë</span><span id="sc-sat">â</span></div><div class="bar-track"><div class="bar-fill" id="bar-sat" style="width:0;background:#0891b2"></div></div></div>
+    <div class="bar-wrap"><div class="bar-top"><span>ð´ í¼ë¡ë</span><span id="sc-fat">â</span></div><div class="bar-track"><div class="bar-fill" id="bar-fat" style="width:0;background:#e11d48"></div></div></div>
+    <div class="bar-wrap"><div class="bar-top"><span>ð ì¢í© ì ì</span><span id="sc-preg">â</span></div><div class="bar-track"><div class="bar-fill" id="bar-preg" style="width:0;background:#059669"></div></div></div>
   </div>
-  <div class="card"><h3 style="margin-bottom:9px">💰 예산 분석 (SGD)</h3><div id="budget-detail"></div></div>
-  <div class="card"><h3 style="margin-bottom:9px">🎫 예약 현황</h3><div id="booking-status-dash"></div></div>
+  <div class="card"><h3 style="margin-bottom:9px">ð° ìì° ë¶ì (SGD)</h3><div id="budget-detail"></div></div>
+  <div class="card"><h3 style="margin-bottom:9px">ð« ìì½ íí©</h3><div id="booking-status-dash"></div></div>
   <div class="card">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:9px">
-      <h3>📡 Trello 활동 로그</h3>
-      <button class="btn btn-trello btn-sm" onclick="syncAllToTrello()">동기화</button>
+      <h3>ð¡ Trello íë ë¡ê·¸</h3>
+      <button class="btn btn-trello btn-sm" onclick="syncAllToTrello()">ëê¸°í</button>
     </div>
-    <div class="log-panel" id="activity-log"><div class="log-empty">아직 활동이 없습니다</div></div>
+    <div class="log-panel" id="activity-log"><div class="log-empty">ìì§ íëì´ ììµëë¤</div></div>
   </div>
-  <div class="card"><h3 style="margin-bottom:9px">💬 모든 의견</h3><div id="all-feedbacks"></div></div>
+  <div class="card"><h3 style="margin-bottom:9px">ð¬ ëª¨ë  ìê²¬</h3><div id="all-feedbacks"></div></div>
 </div>
 
-<!-- ✈️ FLIGHTS -->
+<!-- âï¸ FLIGHTS -->
 <div class="panel" id="panel-flight">
-  <div class="sec-h"><h2>✈️ 항공편 선택</h2><p>선택 → 자동으로 Trello에 기록됩니다</p></div>
-  <div class="info-card info-green">🛡 SQ는 36주 미만 단태아 소견서 불필요. 벌크헤드 좌석(21A) 미리 예약. 2시간마다 기내 걷기 권장.</div>
-  <a href="https://www.google.com/travel/flights/search?tfs=CBwQAhooagwIAhIIL20vc2lucW9yEgoyMDI2LTA2LTEycgwIAhIIL20vMDRsdHkSCjIwMjYtMDYtMTU&curr=SGD&hl=ko" target="_blank" class="btn btn-green" style="display:inline-flex;margin-bottom:12px">🔍 Google Flights 실시간 검색</a>
+  <div class="sec-h"><h2>âï¸ í­ê³µí¸ ì í</h2><p>ì í â ìëì¼ë¡ Trelloì ê¸°ë¡ë©ëë¤</p></div>
+  <div class="info-card info-green">ð¡ SQë 36ì£¼ ë¯¸ë§ ë¨íì ìê²¬ì ë¶íì. ë²í¬í¤ë ì¢ì(21A) ë¯¸ë¦¬ ìì½. 2ìê°ë§ë¤ ê¸°ë´ ê±·ê¸° ê¶ì¥.</div>
+  <a href="https://www.google.com/travel/flights/search?tfs=CBwQAhooagwIAhIIL20vc2lucW9yEgoyMDI2LTA2LTEycgwIAhIIL20vMDRsdHkSCjIwMjYtMDYtMTU&curr=SGD&hl=ko" target="_blank" class="btn btn-green" style="display:inline-flex;margin-bottom:12px">ð Google Flights ì¤ìê° ê²ì</a>
   <div id="flight-list"></div>
 </div>
 
-<!-- 🏝 RESORT -->
+<!-- ð RESORT -->
 <div class="panel" id="panel-resort">
-  <div class="sec-h"><h2>🏝 리조트 선택</h2><p>이메일 버튼 → 자동 초안 + Trello 기록</p></div>
-  <div class="info-card info-amber">💡 공식 홈 ≥ Booking.com 순으로 저렴한 경우 多. "Babymoon Package" 명시 후 이메일 문의 추천.</div>
+  <div class="sec-h"><h2>ð ë¦¬ì¡°í¸ ì í</h2><p>ì´ë©ì¼ ë²í¼ â ìë ì´ì + Trello ê¸°ë¡</p></div>
+  <div class="info-card info-amber">ð¡ ê³µì í â¥ Booking.com ìì¼ë¡ ì ë ´í ê²½ì° å¤. "Babymoon Package" ëªì í ì´ë©ì¼ ë¬¸ì ì¶ì².</div>
   <div id="resort-list"></div>
 </div>
 
-<!-- 📅 PLANNER -->
+<!-- ð PLANNER -->
 <div class="panel" id="panel-plan">
-  <div class="sec-h"><h2>📅 3일 일정 플래너</h2><p>메모 입력 → 저장 버튼으로 Trello 동기화</p></div>
+  <div class="sec-h"><h2>ð 3ì¼ ì¼ì  íëë</h2><p>ë©ëª¨ ìë ¥ â ì ì¥ ë²í¼ì¼ë¡ Trello ëê¸°í</p></div>
   <div id="planner"></div>
-  <button class="btn btn-trello btn-full" onclick="syncPlannerToTrello()">🔄 일정 전체를 Trello에 동기화</button>
+  <button class="btn btn-trello btn-full" onclick="syncPlannerToTrello()">ð ì¼ì  ì ì²´ë¥¼ Trelloì ëê¸°í</button>
 </div>
 
-<!-- 🏊 ACTIVITIES -->
+<!-- ð ACTIVITIES -->
 <div class="panel" id="panel-acts">
-  <div class="sec-h"><h2>🏊 임산부 추천 활동</h2><p>활동 추가 → Trello 자동 기록</p></div>
-  <div class="info-card info-blue">🤰 20주차: 스쿠버❌ 격렬한 수상스포츠❌ · 스노클링✅ 스파✅ 선셋크루즈✅ 요가✅ 수영✅</div>
+  <div class="sec-h"><h2>ð ìì°ë¶ ì¶ì² íë</h2><p>íë ì¶ê° â Trello ìë ê¸°ë¡</p></div>
+  <div class="info-card info-blue">ð¤° 20ì£¼ì°¨: ì¤ì¿ ë²â ê²©ë ¬í ììì¤í¬ì¸ â Â· ì¤ë¸í´ë§â ì¤íâ ì ìí¬ë£¨ì¦â ìê°â ììâ</div>
   <div id="acts-list"></div>
 </div>
 
 <!-- TAB BAR -->
 <div class="tab-bar">
-  <button class="tb active" data-tab="cfg"><span class="ico">⚙️</span>설정</button>
-  <button class="tb" data-tab="dash"><span class="ico">📊</span>대시보드</button>
-  <button class="tb" data-tab="flight"><span class="ico">✈️</span>항공</button>
-  <button class="tb" data-tab="resort"><span class="ico">🏝</span>리조트</button>
-  <button class="tb" data-tab="plan"><span class="ico">📅</span>일정</button>
-  <button class="tb" data-tab="acts"><span class="ico">🏊</span>활동</button>
+  <button class="tb active" data-tab="cfg"><span class="ico">âï¸</span>ì¤ì </button>
+  <button class="tb" data-tab="dash"><span class="ico">ð</span>ëìë³´ë</button>
+  <button class="tb" data-tab="flight"><span class="ico">âï¸</span>í­ê³µ</button>
+  <button class="tb" data-tab="resort"><span class="ico">ð</span>ë¦¬ì¡°í¸</button>
+  <button class="tb" data-tab="plan"><span class="ico">ð</span>ì¼ì </button>
+  <button class="tb" data-tab="acts"><span class="ico">ð</span>íë</button>
 </div>
 
-<!-- ════════════════ SCRIPT ════════════════ -->
+<!-- ââââââââââââââââ SCRIPT ââââââââââââââââ -->
 <script>
 'use strict';
 
-// ─── DATA ──────────────────────────────────────────────────────
+// âââ DATA ââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 const FLIGHTS = [
-  {id:'sq182',airline:'싱가포르항공',flight:'SQ182',dep:'07:30',arr:'10:25',dur:'4h55m',type:'직항',price:780,availability:'좌석 있음',availOk:true,note:'새벽 출발 오전 도착. 임산부에게 가장 쾌적. 벌크헤드 21A 추천.',rec:true,sat:5,fat:2,seat:'21A/21C (벌크헤드)',bookUrl:'https://www.singaporeair.com/en_UK/sg/plan-travel/book-a-flight/',checkUrl:'https://www.google.com/travel/flights?q=SIN+to+MLE&curr=SGD',email:'customercare@singaporeair.com'},
-  {id:'sq464',airline:'싱가포르항공',flight:'SQ464',dep:'23:50',arr:'02:45+1',dur:'4h55m',type:'직항',price:660,availability:'좌석 있음',availOk:true,note:'야간 직항. 기내 수면 가능. 새벽 도착으로 체크인 대기 가능.',rec:false,sat:4,fat:3,seat:'22A/22C (출구 열)',bookUrl:'https://www.singaporeair.com/en_UK/sg/plan-travel/book-a-flight/',checkUrl:'https://www.google.com/travel/flights?q=SIN+to+MLE&curr=SGD',email:'customercare@singaporeair.com'},
-  {id:'ml741',airline:'말레이시아항공',flight:'MH741',dep:'09:00',arr:'15:10',dur:'8h10m',type:'KUL 경유',price:520,availability:'확인 필요',availOk:false,note:'경유 1회. 총 이동 시간 길어 임산부 비추천. 최저가.',rec:false,sat:2,fat:5,seat:'경유편 특성상 연속 확보 어려움',bookUrl:'https://www.malaysiaairlines.com/',checkUrl:'https://www.google.com/travel/flights?q=SIN+to+MLE&curr=SGD',email:'customercare@malaysiaairlines.com'},
-  {id:'ek350',airline:'에미레이트',flight:'EK350',dep:'10:45',arr:'13:40+1',dur:'9h55m',type:'DXB 경유',price:590,availability:'좌석 있음',availOk:true,note:'두바이 경유. 비즈니스 라운지 가능. 장거리라 피로도 높음.',rec:false,sat:3,fat:4,seat:'출구 열 권장',bookUrl:'https://www.emirates.com/sg/english/',checkUrl:'https://www.google.com/travel/flights?q=SIN+to+MLE&curr=SGD',email:'customer@emirates.com'},
+  {id:'sq182',airline:'ì±ê°í¬ë¥´í­ê³µ',flight:'SQ182',dep:'07:30',arr:'10:25',dur:'4h55m',type:'ì§í­',price:780,availability:'ì¢ì ìì',availOk:true,note:'ìë²½ ì¶ë° ì¤ì  ëì°©. ìì°ë¶ìê² ê°ì¥ ì¾ì . ë²í¬í¤ë 21A ì¶ì².',rec:true,sat:5,fat:2,seat:'21A/21C (ë²í¬í¤ë)',bookUrl:'https://www.singaporeair.com/en_UK/sg/plan-travel/book-a-flight/',checkUrl:'https://www.google.com/travel/flights?q=SIN+to+MLE&curr=SGD',email:'customercare@singaporeair.com'},
+  {id:'sq464',airline:'ì±ê°í¬ë¥´í­ê³µ',flight:'SQ464',dep:'23:50',arr:'02:45+1',dur:'4h55m',type:'ì§í­',price:660,availability:'ì¢ì ìì',availOk:true,note:'ì¼ê° ì§í­. ê¸°ë´ ìë©´ ê°ë¥. ìë²½ ëì°©ì¼ë¡ ì²´í¬ì¸ ëê¸° ê°ë¥.',rec:false,sat:4,fat:3,seat:'22A/22C (ì¶êµ¬ ì´)',bookUrl:'https://www.singaporeair.com/en_UK/sg/plan-travel/book-a-flight/',checkUrl:'https://www.google.com/travel/flights?q=SIN+to+MLE&curr=SGD',email:'customercare@singaporeair.com'},
+  {id:'ml741',airline:'ë§ë ì´ììí­ê³µ',flight:'MH741',dep:'09:00',arr:'15:10',dur:'8h10m',type:'KUL ê²½ì ',price:520,availability:'íì¸ íì',availOk:false,note:'ê²½ì  1í. ì´ ì´ë ìê° ê¸¸ì´ ìì°ë¶ ë¹ì¶ì². ìµì ê°.',rec:false,sat:2,fat:5,seat:'ê²½ì í¸ í¹ì±ì ì°ì íë³´ ì´ë ¤ì',bookUrl:'https://www.malaysiaairlines.com/',checkUrl:'https://www.google.com/travel/flights?q=SIN+to+MLE&curr=SGD',email:'customercare@malaysiaairlines.com'},
+  {id:'ek350',airline:'ìë¯¸ë ì´í¸',flight:'EK350',dep:'10:45',arr:'13:40+1',dur:'9h55m',type:'DXB ê²½ì ',price:590,availability:'ì¢ì ìì',availOk:true,note:'ëë°ì´ ê²½ì . ë¹ì¦ëì¤ ë¼ì´ì§ ê°ë¥. ì¥ê±°ë¦¬ë¼ í¼ë¡ë ëì.',rec:false,sat:3,fat:4,seat:'ì¶êµ¬ ì´ ê¶ì¥',bookUrl:'https://www.emirates.com/sg/english/',checkUrl:'https://www.google.com/travel/flights?q=SIN+to+MLE&curr=SGD',email:'customer@emirates.com'},
 ];
 
 const RESORTS = [
-  {id:'sheraton',name:'쉐라톤 풀문 리조트 & 스파',tier:'VALUE',emoji:'🌊',price:750,priceRange:'USD 680~920',availability:'6월 예약 가능',availOk:true,note:'스피드보트 45분. 가족 분위기. 레스토랑 6개.',babymoon:'산전 마사지, 베이비문 패키지, 논알코올 드링크',pros:['합리적 가격','스파 우수'],cons:['럭셔리감 덜함'],sat:4,fat:2,bookUrl:'https://www.marriott.com/reservation/rateListMenu.mi?propertyCode=MLEFM',checkUrl:'https://www.marriott.com/en-us/hotels/mlefm-sheraton-maldives-full-moon-resort-and-spa/overview/',bookingComUrl:'https://www.booking.com/hotel/mv/sheraton-maldives-full-moon-resort-spa.html',email:'maldives.sheraton@sheraton.com',tel:'+960 664 2010',emailSubject:'Babymoon Package Inquiry – June 2026',emailBody:`Dear Sheraton Full Moon Team,\n\nWe are a couple from Singapore planning our babymoon in June 2026. My wife is 20 weeks pregnant (single pregnancy, healthy).\n\nRequests:\n- Overwater Bungalow / Water Villa · 3 nights (check-in ~June 12, check-out June 15)\n- Babymoon package availability\n- Prenatal spa treatments\n- Non-alcoholic welcome amenities\n- Pregnancy pillow & body pillow\n- Speedboat transfer details\n\nPlease advise on availability and pricing.\n\nWarm regards,\nYoung & Ga-yeon (ohyoungouk@gmail.com)`},
-  {id:'ritz',name:'리츠칼튼 몰디브 파리 아일랜드',tier:'LUXURY',emoji:'👑',price:2000,priceRange:'USD 1,800~2,500',availability:'잔여 적음 — 빠른 예약 추천',availOk:false,note:'프라이빗 수상 빌라. 1:1 버틀러 서비스. 임산부 배려 최상.',babymoon:'산전 전용 스파, 임산부 베개·매트리스, 선셋 크루즈 포함',pros:['최상 프라이버시','버틀러 서비스'],cons:['가격 매우 높음'],sat:5,fat:1,bookUrl:'https://www.ritzcarlton.com/en/hotels/maldives-fari-islands/',checkUrl:'https://www.ritzcarlton.com/en/hotels/maldives-fari-islands/',bookingComUrl:'https://www.booking.com/hotel/mv/the-ritz-carlton-maldives-fari-islands.html',email:'rc.mlebz.leads@ritzcarlton.com',tel:'+960 666 0101',emailSubject:'Babymoon Reservation – June 2026',emailBody:`Dear Ritz-Carlton Maldives,\n\nWe are newlyweds from Singapore planning our babymoon in June 2026. My wife is 20 weeks pregnant.\n\nRequests:\n- Overwater Villa · 3 nights (check-in ~June 12)\n- Babymoon package\n- Prenatal spa treatments\n- Non-alcoholic welcome set\n- Pregnancy pillow & body pillow\n- Low-vibration speedboat transfer\n\nPlease share availability and current pricing.\n\nWarm regards,\nYoung & Ga-yeon (ohyoungouk@gmail.com)`},
-  {id:'w',name:'W 몰디브',tier:'LUXURY',emoji:'✨',price:1500,priceRange:'USD 1,400~1,700',availability:'예약 가능',availOk:true,note:'트렌디한 분위기. 개인 수상 빌라 풀장.',babymoon:'스파 크레딧 USD 200, 웰컴 아메니티, 스노클링 장비 무료',pros:['힙한 분위기','개인 풀장'],cons:['파티 분위기 있음'],sat:4,fat:2,bookUrl:'https://www.marriott.com/reservation/rateListMenu.mi?propertyCode=MLEWH',checkUrl:'https://www.marriott.com/en-us/hotels/mlewh-w-maldives/overview/',bookingComUrl:'https://www.booking.com/hotel/mv/w-maldives.html',email:'wmaldives@whotels.com',tel:'+960 666 2222',emailSubject:'Romantic Stay Inquiry – June 2026',emailBody:`Hello W Maldives,\n\nWe are a couple from Singapore booking our babymoon in June 2026. My wife is 20 weeks pregnant.\n\nRequests:\n- WOW Suite / Overwater Bungalow · 3 nights (around June 12-15)\n- Prenatal spa treatments at AWAY Spa\n- Spa credit package details\n- Non-alcoholic welcome package\n\nPlease advise on availability.\n\nBest,\nYoung & Ga-yeon`},
-  {id:'conrad',name:'콘래드 몰디브 랑갈리',tier:'LUXURY',emoji:'🐠',price:1800,priceRange:'USD 1,600~2,200',availability:'확인 필요',availOk:false,note:'세계 최초 수중 레스토랑 이쿠. 두 섬 구성.',babymoon:'수중 레스토랑 디너 포함, 스파 트리트먼트',pros:['수중 레스토랑','독특한 경험'],cons:['가장 멀리 있음'],sat:5,fat:3,bookUrl:'https://www.hilton.com/en/hotels/mlermci-conrad-maldives-rangali-island/',checkUrl:'https://www.hilton.com/en/hotels/mlermci-conrad-maldives-rangali-island/',bookingComUrl:'https://www.booking.com/hotel/mv/rangali.html',email:'reservations.maldives@conradhotels.com',tel:'+960 668 0629',emailSubject:'Babymoon Package Inquiry – June 2026',emailBody:`Dear Conrad Maldives,\n\nWe are a Singapore couple planning our babymoon in June 2026. My wife is ~20 weeks pregnant.\n\nRequests:\n- Deluxe Water Villa · 3 nights (mid-June 2026)\n- Ithaa Undersea Restaurant reservation for 2\n- Prenatal spa treatments\n- Non-alcoholic romance package\n\nPlease confirm availability and rates.\n\nYoung & Ga-yeon (ohyoungouk@gmail.com)`},
+  {id:'sheraton',name:'ìë¼í¤ íë¬¸ ë¦¬ì¡°í¸ & ì¤í',tier:'VALUE',emoji:'ð',price:750,priceRange:'USD 680~920',availability:'6ì ìì½ ê°ë¥',availOk:true,note:'ì¤í¼ëë³´í¸ 45ë¶. ê°ì¡± ë¶ìê¸°. ë ì¤í ë 6ê°.',babymoon:'ì°ì  ë§ì¬ì§, ë² ì´ë¹ë¬¸ í¨í¤ì§, ë¼ìì½ì¬ ëë§í¬',pros:['í©ë¦¬ì  ê°ê²©','ì¤í ì°ì'],cons:['ë­ìë¦¬ê° ëí¨'],sat:4,fat:2,bookUrl:'https://www.marriott.com/reservation/rateListMenu.mi?propertyCode=MLEFM',checkUrl:'https://www.marriott.com/en-us/hotels/mlefm-sheraton-maldives-full-moon-resort-and-spa/overview/',bookingComUrl:'https://www.booking.com/hotel/mv/sheraton-maldives-full-moon-resort-spa.html',email:'maldives.sheraton@sheraton.com',tel:'+960 664 2010',emailSubject:'Babymoon Package Inquiry â June 2026',emailBody:`Dear Sheraton Full Moon Team,\n\nWe are a couple from Singapore planning our babymoon in June 2026. My wife is 20 weeks pregnant (single pregnancy, healthy).\n\nRequests:\n- Overwater Bungalow / Water Villa Â· 3 nights (check-in ~June 12, check-out June 15)\n- Babymoon package availability\n- Prenatal spa treatments\n- Non-alcoholic welcome amenities\n- Pregnancy pillow & body pillow\n- Speedboat transfer details\n\nPlease advise on availability and pricing.\n\nWarm regards,\nYoung & Ga-yeon (ohyoungouk@gmail.com)`},
+  {id:'ritz',name:'ë¦¬ì¸ ì¹¼í¼ ëª°ëë¸ íë¦¬ ìì¼ëë',tier:'LUXURY',emoji:'ð',price:2000,priceRange:'USD 1,800~2,500',availability:'ìì¬ ì ì â ë¹ ë¥¸ ìì½ ì¶ì²',availOk:false,note:'íë¼ì´ë¹ ìì ë¹ë¼. 1:1 ë²íë¬ ìë¹ì¤. ìì°ë¶ ë°°ë ¤ ìµì.',babymoon:'ì°ì  ì ì© ì¤í, ìì°ë¶ ë² ê°Â·ë§¤í¸ë¦¬ì¤, ì ì í¬ë£¨ì¦ í¬í¨',pros:['ìµì íë¼ì´ë²ì','ë²íë¬ ìë¹ì¤'],cons:['ê°ê²© ë§¤ì° ëì'],sat:5,fat:1,bookUrl:'https://www.ritzcarlton.com/en/hotels/maldives-fari-islands/',checkUrl:'https://www.ritzcarlton.com/en/hotels/maldives-fari-islands/',bookingComUrl:'https://www.booking.com/hotel/mv/the-ritz-carlton-maldives-fari-islands.html',email:'rc.mlebz.leads@ritzcarlton.com',tel:'+960 666 0101',emailSubject:'Babymoon Reservation â June 2026',emailBody:`Dear Ritz-Carlton Maldives,\n\nWe are newlyweds from Singapore planning our babymoon in June 2026. My wife is 20 weeks pregnant.\n\nRequests:\n- Overwater Villa Â· 3 nights (check-in ~June 12)\n- Babymoon package\n- Prenatal spa treatments\n- Non-alcoholic welcome set\n- Pregnancy pillow & body pillow\n- Low-vibration speedboat transfer\n\nPlease share availability and current pricing.\n\nWarm regards,\nYoung & Ga-yeon (ohyoungouk@gmail.com)`},
+  {id:'w',name:'W ëª°ëë¸',tier:'LUXURY',emoji:'â¨',price:1500,priceRange:'USD 1,400~1,700',availability:'ìì½ ê°ë¥',availOk:true,note:'í¸ë ëí ë¶ìê¸°. ê°ì¸ ìì ë¹ë¼ íì¥.',babymoon:'ì¤í í¬ë ë§ USD 200, ì°ì»´ ìë©ëí°, ì¤ë¸í´ë§ ì¥ë¹ ë¬´ë£',pros:['íí ë¶ìê¸°','ê°ì¸ íì¥'],cons:['íí° ë¶ìê¸° ìì'],sat:4,fat:2,bookUrl:'https://www.marriott.com/reservation/rateListMenu.mi?propertyCode=MLEWH',checkUrl:'https://www.marriott.com/en-us/hotels/mlewh-w-maldives/overview/',bookingComUrl:'https://www.booking.com/hotel/mv/w-maldives.html',email:'wmaldives@whotels.com',tel:'+960 666 2222',emailSubject:'Romantic Stay Inquiry â June 2026',emailBody:`Hello W Maldives,\n\nWe are a couple from Singapore booking our babymoon in June 2026. My wife is 20 weeks pregnant.\n\nRequests:\n- WOW Suite / Overwater Bungalow Â· 3 nights (around June 12-15)\n- Prenatal spa treatments at AWAY Spa\n- Spa credit package details\n- Non-alcoholic welcome package\n\nPlease advise on availability.\n\nBest,\nYoung & Ga-yeon`},
+  {id:'conrad',name:'ì½ëë ëª°ëë¸ ëê°ë¦¬',tier:'LUXURY',emoji:'ð ',price:1800,priceRange:'USD 1,600~2,200',availability:'íì¸ íì',availOk:false,note:'ì¸ê³ ìµì´ ìì¤ ë ì¤í ë ì´ì¿ . ë ì¬ êµ¬ì±.',babymoon:'ìì¤ ë ì¤í ë ëë í¬í¨, ì¤í í¸ë¦¬í¸ë¨¼í¸',pros:['ìì¤ ë ì¤í ë','ëí¹í ê²½í'],cons:['ê°ì¥ ë©ë¦¬ ìì'],sat:5,fat:3,bookUrl:'https://www.hilton.com/en/hotels/mlermci-conrad-maldives-rangali-island/',checkUrl:'https://www.hilton.com/en/hotels/mlermci-conrad-maldives-rangali-island/',bookingComUrl:'https://www.booking.com/hotel/mv/rangali.html',email:'reservations.maldives@conradhotels.com',tel:'+960 668 0629',emailSubject:'Babymoon Package Inquiry â June 2026',emailBody:`Dear Conrad Maldives,\n\nWe are a Singapore couple planning our babymoon in June 2026. My wife is ~20 weeks pregnant.\n\nRequests:\n- Deluxe Water Villa Â· 3 nights (mid-June 2026)\n- Ithaa Undersea Restaurant reservation for 2\n- Prenatal spa treatments\n- Non-alcoholic romance package\n\nPlease confirm availability and rates.\n\nYoung & Ga-yeon (ohyoungouk@gmail.com)`},
 ];
 
 const ACTIVITIES = [
-  {id:'spa',name:'산전 마사지 & 스파',emoji:'💆',price:150,unit:'USD/회',preg:5,desc:'임산부 전용 오일로 진행하는 60분 마사지. 허리·다리 부종 완화.',tags:['강력추천','안전'],sat:5,fat:1,bookUrl:'https://www.viator.com/Maldives/d5448-ttd?cat=6',bookNote:'리조트 스파 직접 예약'},
-  {id:'snorkel',name:'스노클링 (가이드 동반)',emoji:'🤿',price:60,unit:'USD/인',preg:4,desc:'조용한 라군, 가이드 동반. 강한 조류 구역 제외.',tags:['가이드 필수','라군만'],sat:5,fat:3,bookUrl:'https://www.viator.com/Maldives/d5448-ttd?cat=50',bookNote:'리조트 수상스포츠센터'},
-  {id:'sunset',name:'선셋 크루즈',emoji:'🌅',price:80,unit:'USD/인',preg:5,desc:'천천히 운항. 모자이코 음료·과일 제공. 가장 안전한 보트 활동.',tags:['강력추천','로맨틱'],sat:5,fat:1,bookUrl:'https://www.viator.com/tours/Maldives/Maldives-Sunset-Cruise/d5448-5479SUNSET',bookNote:'Viator 또는 리조트 투어 데스크'},
-  {id:'dolphin',name:'돌핀 와칭 투어',emoji:'🐬',price:70,unit:'USD/인',preg:3,desc:'스피드보트 진동 있음. 짧은 코스 1시간 선택.',tags:['보트 진동 주의'],sat:5,fat:3,bookUrl:'https://www.viator.com/Maldives/d5448-ttd',bookNote:'리조트 투어 데스크'},
-  {id:'kayak',name:'유리바닥 카약',emoji:'🚣',price:40,unit:'USD/시간',preg:4,desc:'라군 카약. 격렬하지 않아 임산부 적합. 30분 추천.',tags:['적당','자연 감상'],sat:4,fat:2,bookUrl:'https://www.viator.com/Maldives/d5448-ttd',bookNote:'리조트 수상스포츠센터'},
-  {id:'photo',name:'베이비문 포토슈팅',emoji:'📸',price:200,unit:'USD/세션',preg:5,desc:'태교 기념 사진. 리조트 전속 사진작가 패키지.',tags:['강력추천','필수 추억'],sat:5,fat:1,bookUrl:'https://www.maldivesphotographer.com/',bookNote:'리조트 컨시어지 또는 전문 업체'},
-  {id:'dining',name:'수중 레스토랑 다이닝',emoji:'🍽️',price:250,unit:'USD/2인',preg:5,desc:'유리 천장 수중 레스토랑. 논알코올 페어링.',tags:['로맨틱','하이라이트'],sat:5,fat:1,bookUrl:'https://www.conradmaldives.com/dine/ithaa-undersea-restaurant/',bookNote:'콘래드 이타아 — 3일 전 예약 필수'},
-  {id:'yoga',name:'프리네이탈 비치 요가',emoji:'🧘',price:50,unit:'USD/세션',preg:5,desc:'해변 임산부 전용 요가. 20주차 안전 자세.',tags:['강력추천','안전'],sat:5,fat:1,bookUrl:'https://www.viator.com/Maldives/d5448-ttd',bookNote:'리조트 웰니스센터'},
-  {id:'stargazing',name:'별자리 관측',emoji:'⭐',price:40,unit:'USD/인',preg:5,desc:'빛 공해 없는 몰디브. 망원경 포함 가이드.',tags:['조용','로맨틱'],sat:5,fat:1,bookUrl:'https://www.viator.com/Maldives/d5448-ttd',bookNote:'리조트 저녁 프로그램'},
-  {id:'sandbank',name:'샌드뱅크 피크닉',emoji:'🏖️',price:120,unit:'USD/2인',preg:5,desc:'모래섬 보트 10분 + 프라이빗 피크닉. 과일·샌드위치.',tags:['프라이빗','베이비문'],sat:5,fat:1,bookUrl:'https://www.viator.com/Maldives/d5448-ttd',bookNote:'리조트 컨시어지 — 하루 전 예약'},
+  {id:'spa',name:'ì°ì  ë§ì¬ì§ & ì¤í',emoji:'ð',price:150,unit:'USD/í',preg:5,desc:'ìì°ë¶ ì ì© ì¤ì¼ë¡ ì§ííë 60ë¶ ë§ì¬ì§. íë¦¬Â·ë¤ë¦¬ ë¶ì¢ ìí.',tags:['ê°ë ¥ì¶ì²','ìì '],sat:5,fat:1,bookUrl:'https://www.viator.com/Maldives/d5448-ttd?cat=6',bookNote:'ë¦¬ì¡°í¸ ì¤í ì§ì  ìì½'},
+  {id:'snorkel',name:'ì¤ë¸í´ë§ (ê°ì´ë ëë°)',emoji:'ð¤¿',price:60,unit:'USD/ì¸',preg:4,desc:'ì¡°ì©í ë¼êµ°, ê°ì´ë ëë°. ê°í ì¡°ë¥ êµ¬ì­ ì ì¸.',tags:['ê°ì´ë íì','ë¼êµ°ë§'],sat:5,fat:3,bookUrl:'https://www.viator.com/Maldives/d5448-ttd?cat=50',bookNote:'ë¦¬ì¡°í¸ ììì¤í¬ì¸ ì¼í°'},
+  {id:'sunset',name:'ì ì í¬ë£¨ì¦',emoji:'ð',price:80,unit:'USD/ì¸',preg:5,desc:'ì²ì²í ì´í­. ëª¨ìì´ì½ ìë£Â·ê³¼ì¼ ì ê³µ. ê°ì¥ ìì í ë³´í¸ íë.',tags:['ê°ë ¥ì¶ì²','ë¡ë§¨í±'],sat:5,fat:1,bookUrl:'https://www.viator.com/tours/Maldives/Maldives-Sunset-Cruise/d5448-5479SUNSET',bookNote:'Viator ëë ë¦¬ì¡°í¸ í¬ì´ ë°ì¤í¬'},
+  {id:'dolphin',name:'ëí ìì¹­ í¬ì´',emoji:'ð¬',price:70,unit:'USD/ì¸',preg:3,desc:'ì¤í¼ëë³´í¸ ì§ë ìì. ì§§ì ì½ì¤ 1ìê° ì í.',tags:['ë³´í¸ ì§ë ì£¼ì'],sat:5,fat:3,bookUrl:'https://www.viator.com/Maldives/d5448-ttd',bookNote:'ë¦¬ì¡°í¸ í¬ì´ ë°ì¤í¬'},
+  {id:'kayak',name:'ì ë¦¬ë°ë¥ ì¹´ì½',emoji:'ð£',price:40,unit:'USD/ìê°',preg:4,desc:'ë¼êµ° ì¹´ì½. ê²©ë ¬íì§ ìì ìì°ë¶ ì í©. 30ë¶ ì¶ì².',tags:['ì ë¹','ìì° ê°ì'],sat:4,fat:2,bookUrl:'https://www.viator.com/Maldives/d5448-ttd',bookNote:'ë¦¬ì¡°í¸ ììì¤í¬ì¸ ì¼í°'},
+  {id:'photo',name:'ë² ì´ë¹ë¬¸ í¬í ìí',emoji:'ð¸',price:200,unit:'USD/ì¸ì',preg:5,desc:'íêµ ê¸°ë ì¬ì§. ë¦¬ì¡°í¸ ì ì ì¬ì§ìê° í¨í¤ì§.',tags:['ê°ë ¥ì¶ì²','íì ì¶ìµ'],sat:5,fat:1,bookUrl:'https://www.maldivesphotographer.com/',bookNote:'ë¦¬ì¡°í¸ ì»¨ìì´ì§ ëë ì ë¬¸ ìì²´'},
+  {id:'dining',name:'ìì¤ ë ì¤í ë ë¤ì´ë',emoji:'ð½ï¸',price:250,unit:'USD/2ì¸',preg:5,desc:'ì ë¦¬ ì²ì¥ ìì¤ ë ì¤í ë. ë¼ìì½ì¬ íì´ë§.',tags:['ë¡ë§¨í±','íì´ë¼ì´í¸'],sat:5,fat:1,bookUrl:'https://www.conradmaldives.com/dine/ithaa-undersea-restaurant/',bookNote:'ì½ëë ì´íì â 3ì¼ ì  ìì½ íì'},
+  {id:'yoga',name:'íë¦¬ë¤ì´í ë¹ì¹ ìê°',emoji:'ð§',price:50,unit:'USD/ì¸ì',preg:5,desc:'í´ë³ ìì°ë¶ ì ì© ìê°. 20ì£¼ì°¨ ìì  ìì¸.',tags:['ê°ë ¥ì¶ì²','ìì '],sat:5,fat:1,bookUrl:'https://www.viator.com/Maldives/d5448-ttd',bookNote:'ë¦¬ì¡°í¸ ì°ëì¤ì¼í°'},
+  {id:'stargazing',name:'ë³ìë¦¬ ê´ì¸¡',emoji:'â­',price:40,unit:'USD/ì¸',preg:5,desc:'ë¹ ê³µí´ ìë ëª°ëë¸. ë§ìê²½ í¬í¨ ê°ì´ë.',tags:['ì¡°ì©','ë¡ë§¨í±'],sat:5,fat:1,bookUrl:'https://www.viator.com/Maldives/d5448-ttd',bookNote:'ë¦¬ì¡°í¸ ì ë íë¡ê·¸ë¨'},
+  {id:'sandbank',name:'ìëë±í¬ í¼í¬ë',emoji:'ðï¸',price:120,unit:'USD/2ì¸',preg:5,desc:'ëª¨ëì¬ ë³´í¸ 10ë¶ + íë¼ì´ë¹ í¼í¬ë. ê³¼ì¼Â·ìëìì¹.',tags:['íë¼ì´ë¹','ë² ì´ë¹ë¬¸'],sat:5,fat:1,bookUrl:'https://www.viator.com/Maldives/d5448-ttd',bookNote:'ë¦¬ì¡°í¸ ì»¨ìì´ì§ â íë£¨ ì  ìì½'},
 ];
 
 const PLAN_OPTS=[
-  {v:'',l:'— 선택 안함 —'},{v:'rest',l:'🛏 체크인 & 휴식'},{v:'beach',l:'🏖 비치 산책'},
-  {v:'spa',l:'💆 스파 & 마사지'},{v:'snorkel',l:'🤿 스노클링'},{v:'kayak',l:'🚣 카약'},
-  {v:'yoga',l:'🧘 비치 요가'},{v:'sunset',l:'🌅 선셋 크루즈'},{v:'dolphin',l:'🐬 돌핀 와칭'},
-  {v:'dining',l:'🍽️ 스페셜 디너'},{v:'photo',l:'📸 포토슈팅'},{v:'stargazing',l:'⭐ 별자리 관측'},
-  {v:'sandbank',l:'🏖 샌드뱅크 피크닉'},{v:'pool',l:'🏊 풀장 휴식'},{v:'market',l:'🛍 로컬 마켓'},
+  {v:'',l:'â ì í ìí¨ â'},{v:'rest',l:'ð ì²´í¬ì¸ & í´ì'},{v:'beach',l:'ð ë¹ì¹ ì°ì±'},
+  {v:'spa',l:'ð ì¤í & ë§ì¬ì§'},{v:'snorkel',l:'ð¤¿ ì¤ë¸í´ë§'},{v:'kayak',l:'ð£ ì¹´ì½'},
+  {v:'yoga',l:'ð§ ë¹ì¹ ìê°'},{v:'sunset',l:'ð ì ì í¬ë£¨ì¦'},{v:'dolphin',l:'ð¬ ëí ìì¹­'},
+  {v:'dining',l:'ð½ï¸ ì¤íì ëë'},{v:'photo',l:'ð¸ í¬í ìí'},{v:'stargazing',l:'â­ ë³ìë¦¬ ê´ì¸¡'},
+  {v:'sandbank',l:'ð ìëë±í¬ í¼í¬ë'},{v:'pool',l:'ð íì¥ í´ì'},{v:'market',l:'ð ë¡ì»¬ ë§ì¼'},
 ];
 
-// ─── STATE ─────────────────────────────────────────────────────
+// âââ STATE âââââââââââââââââââââââââââââââââââââââââââââââââââââ
 const LS_KEY = 'maldives_trello_v1';
 function defaultState() {
   return {
-    trello: { key:'', token:'', cardId:'', name:'영욱' },
+    trello: { key:'', token:'', cardId:'', name:'ìì±' },
     notify: { booking:true, comment:true, email:true, select:false },
     selFlight: null, selResort: null, selActs: [],
     plans: {
@@ -435,7 +435,7 @@ function saveState() {
 let state = loadState();
 state.selActs = new Set(state.selActs || []);
 
-// ─── TRELLO API ────────────────────────────────────────────────
+// âââ TRELLO API ââââââââââââââââââââââââââââââââââââââââââââââââ
 const Trello = {
   get cfg() { return state.trello; },
   isConnected() { return !!(this.cfg.key && this.cfg.token && this.cfg.cardId); },
@@ -443,7 +443,8 @@ const Trello = {
   auth() { return `key=${this.cfg.key}&token=${this.cfg.token}`; },
 
   async request(method, path, body={}) {
-    const url = `${this.base}${path}?${this.auth()}`;
+    const sep = path.includes('?') ? '&' : '?';
+    const url = `${this.base}${path}${sep}${this.auth()}`;
     try {
       const opts = { method, headers:{'Content-Type':'application/json'} };
       if(method !== 'GET') opts.body = JSON.stringify(body);
@@ -454,17 +455,17 @@ const Trello = {
   },
 
   async postComment(text) {
-    if (!this.isConnected()) return { ok:false, error:'미연결' };
+    if (!this.isConnected()) return { ok:false, error:'ë¯¸ì°ê²°' };
     return this.request('POST', `/cards/${this.cfg.cardId}/actions/comments`, { text });
   },
 
   async updateDesc(desc) {
-    if (!this.isConnected()) return { ok:false, error:'미연결' };
+    if (!this.isConnected()) return { ok:false, error:'ë¯¸ì°ê²°' };
     return this.request('PUT', `/cards/${this.cfg.cardId}`, { desc });
   },
 
   async getCard() {
-    if (!this.isConnected()) return { ok:false, error:'미연결' };
+    if (!this.isConnected()) return { ok:false, error:'ë¯¸ì°ê²°' };
     return this.request('GET', `/cards/${this.cfg.cardId}?fields=name,desc`);
   },
 
@@ -475,7 +476,7 @@ const Trello = {
   }
 };
 
-// ─── TOAST ────────────────────────────────────────────────────
+// âââ TOAST ââââââââââââââââââââââââââââââââââââââââââââââââââââ
 let toastTimer;
 function toast(msg, type='success') {
   const el = document.getElementById('toast');
@@ -485,7 +486,7 @@ function toast(msg, type='success') {
   toastTimer = setTimeout(() => { el.className = ''; }, 2800);
 }
 
-// ─── ACTIVITY LOG ─────────────────────────────────────────────
+// âââ ACTIVITY LOG âââââââââââââââââââââââââââââââââââââââââââââ
 function ts() {
   const n = new Date();
   return `${n.getMonth()+1}/${n.getDate()} ${n.getHours().toString().padStart(2,'0')}:${n.getMinutes().toString().padStart(2,'0')}`;
@@ -501,43 +502,43 @@ function addLog(icon, msg, trelloSent=false, color='#0369a1') {
 function renderLog() {
   const el = document.getElementById('activity-log');
   if (!el) return;
-  if (!state.activityLog.length) { el.innerHTML = '<div class="log-empty">아직 활동이 없습니다</div>'; return; }
+  if (!state.activityLog.length) { el.innerHTML = '<div class="log-empty">ìì§ íëì´ ììµëë¤</div>'; return; }
   el.innerHTML = state.activityLog.map(l => `
     <div class="log-item">
       <div class="log-dot" style="background:${l.color}"></div>
       <div style="flex:1">
         <span style="font-size:11px">${l.icon} ${l.msg}</span>
-        ${l.trelloSent ? '<span class="trello-badge" style="margin-left:6px">Trello ✓</span>' : ''}
+        ${l.trelloSent ? '<span class="trello-badge" style="margin-left:6px">Trello â</span>' : ''}
       </div>
       <div class="log-time">${l.ts}</div>
     </div>`).join('');
 }
 
-// ─── TRELLO COMMENT BUILDER ───────────────────────────────────
+// âââ TRELLO COMMENT BUILDER âââââââââââââââââââââââââââââââââââ
 function buildCommentText(type, payload) {
-  const who = state.trello.name || '영욱';
-  const sep = '\n━━━━━━━━━━━━━━━━━━━━━\n';
-  const footer = `\n⏰ ${ts()} | 👤 ${who} | 🌴 몰디브 태교여행 플래너`;
+  const who = state.trello.name || 'ìì±';
+  const sep = '\nâââââââââââââââââââââ\n';
+  const footer = `\nâ° ${ts()} | ð¤ ${who} | ð´ ëª°ëë¸ íêµì¬í íëë`;
   switch(type) {
     case 'booking_status':
-      const statusMap = {none:'미예약',emailed:'📧 이메일 발송',pending:'⏳ 확인 중',booked:'✅ 예약 완료'};
-      return `🔔 예약 상태 변경${sep}**${payload.name}**\n${statusMap[payload.status] || payload.status}${footer}`;
+      const statusMap = {none:'ë¯¸ìì½',emailed:'ð§ ì´ë©ì¼ ë°ì¡',pending:'â³ íì¸ ì¤',booked:'â ìì½ ìë£'};
+      return `ð ìì½ ìí ë³ê²½${sep}**${payload.name}**\n${statusMap[payload.status] || payload.status}${footer}`;
     case 'comment':
-      return `💬 새 의견 등록${sep}**${payload.who}**: ${payload.txt}\n📌 항목: ${payload.key}${footer}`;
+      return `ð¬ ì ìê²¬ ë±ë¡${sep}**${payload.who}**: ${payload.txt}\nð í­ëª©: ${payload.key}${footer}`;
     case 'email_sent':
-      return `📧 예약 이메일 발송${sep}**${payload.name}**\n수신: ${payload.email}\n임신 20주차 베이비문 패키지 문의${footer}`;
+      return `ð§ ìì½ ì´ë©ì¼ ë°ì¡${sep}**${payload.name}**\nìì : ${payload.email}\nìì  20ì£¼ì°¨ ë² ì´ë¹ë¬¸ í¨í¤ì§ ë¬¸ì${footer}`;
     case 'flight_selected':
-      return `✈️ 항공편 선택${sep}**${payload.airline} ${payload.flight}**\n${payload.dep}→${payload.arr} · ${payload.type} · SGD ${payload.price}/인${footer}`;
+      return `âï¸ í­ê³µí¸ ì í${sep}**${payload.airline} ${payload.flight}**\n${payload.dep}â${payload.arr} Â· ${payload.type} Â· SGD ${payload.price}/ì¸${footer}`;
     case 'resort_selected':
-      return `🏝 리조트 선택${sep}**${payload.name}**\nUSD ${payload.price}/박 · ${payload.tier}${footer}`;
+      return `ð ë¦¬ì¡°í¸ ì í${sep}**${payload.name}**\nUSD ${payload.price}/ë° Â· ${payload.tier}${footer}`;
     case 'act_added':
-      return `🏊 활동 추가${sep}**${payload.emoji} ${payload.name}**\nUSD ${payload.price}${payload.unit}${footer}`;
+      return `ð íë ì¶ê°${sep}**${payload.emoji} ${payload.name}**\nUSD ${payload.price}${payload.unit}${footer}`;
     case 'sync_all':
       const fl = FLIGHTS.find(f=>f.id===state.selFlight);
       const rs = RESORTS.find(r=>r.id===state.selResort);
       const acts = ACTIVITIES.filter(a=>state.selActs.has(a.id));
       const bg = calcBudget();
-      return `📊 전체 플래너 동기화${sep}✈️ 항공: ${fl?fl.airline+' '+fl.flight:'미선택'}\n🏝 리조트: ${rs?rs.name:'미선택'}\n🏊 활동: ${acts.length?acts.map(a=>a.name).join(', '):'미선택'}\n💰 예상 총 예산: SGD ${bg.total.toLocaleString()}\n🤰 임산부 점수: ${calcScores().preg}점${footer}`;
+      return `ð ì ì²´ íëë ëê¸°í${sep}âï¸ í­ê³µ: ${fl?fl.airline+' '+fl.flight:'ë¯¸ì í'}\nð ë¦¬ì¡°í¸: ${rs?rs.name:'ë¯¸ì í'}\nð íë: ${acts.length?acts.map(a=>a.name).join(', '):'ë¯¸ì í'}\nð° ìì ì´ ìì°: SGD ${bg.total.toLocaleString()}\nð¤° ìì°ë¶ ì ì: ${calcScores().preg}ì ${footer}`;
     default: return payload.text || '';
   }
 }
@@ -548,27 +549,27 @@ async function trelloPost(type, payload) {
   return r.ok;
 }
 
-// ─── TRELLO ACTIONS ──────────────────────────────────────────
+// âââ TRELLO ACTIONS ââââââââââââââââââââââââââââââââââââââââââ
 async function connectTrello() {
   const key = document.getElementById('cfg-key').value.trim();
   const token = document.getElementById('cfg-token').value.trim();
   const cardId = document.getElementById('cfg-card').value.trim();
   const name = document.getElementById('cfg-name').value;
-  if (!key || !token || !cardId) { toast('⚠️ 세 가지 값을 모두 입력하세요', 'error'); return; }
+  if (!key || !token || !cardId) { toast('â ï¸ ì¸ ê°ì§ ê°ì ëª¨ë ìë ¥íì¸ì', 'error'); return; }
   state.trello = { key, token, cardId, name };
   saveState();
   updateTrelloDot('loading');
-  toast('🔄 연결 테스트 중...', 'info');
+  toast('ð ì°ê²° íì¤í¸ ì¤...', 'info');
   const r = await Trello.test();
   if (r.ok) {
     updateTrelloDot('connected');
-    toast(`✅ Trello 연결 성공! 카드: "${r.cardName}"`, 'success');
-    addLog('🔗', `Trello 연결 완료 — 카드: "${r.cardName}"`, false, '#059669');
+    toast(`â Trello ì°ê²° ì±ê³µ! ì¹´ë: "${r.cardName}"`, 'success');
+    addLog('ð', `Trello ì°ê²° ìë£ â ì¹´ë: "${r.cardName}"`, false, '#059669');
     document.getElementById('trello-sync-now').style.display = '';
-    document.getElementById('trello-pill').textContent = '✅ Trello 연결됨';
+    document.getElementById('trello-pill').textContent = 'â Trello ì°ê²°ë¨';
   } else {
     updateTrelloDot('disconnected');
-    toast('❌ 연결 실패: ' + r.error.substring(0,60), 'error');
+    toast('â ì°ê²° ì¤í¨: ' + r.error.substring(0,60), 'error');
   }
   saveNotifySettings();
   renderAll();
@@ -586,14 +587,14 @@ function updateTrelloDot(status) {
   const dot = document.getElementById('trello-dot');
   const txt = document.getElementById('trello-status-text');
   dot.className = 'trello-dot ' + status;
-  if(status === 'connected') txt.textContent = `✅ Trello 연결됨 — ${state.trello.cardId} | ${state.trello.name}로 접속 중`;
-  else if(status === 'loading') txt.textContent = '🔄 연결 확인 중...';
-  else txt.textContent = 'Trello 미연결 — ⚙️ 설정 탭에서 연결하세요';
+  if(status === 'connected') txt.textContent = `â Trello ì°ê²°ë¨ â ${state.trello.cardId} | ${state.trello.name}ë¡ ì ì ì¤`;
+  else if(status === 'loading') txt.textContent = 'ð ì°ê²° íì¸ ì¤...';
+  else txt.textContent = 'Trello ë¯¸ì°ê²° â âï¸ ì¤ì  í­ìì ì°ê²°íì¸ì';
 }
 
 async function syncAllToTrello() {
-  if (!Trello.isConnected()) { toast('Trello 미연결 — 설정 탭을 확인하세요', 'error'); return; }
-  toast('🔄 Trello 동기화 중...', 'info');
+  if (!Trello.isConnected()) { toast('Trello ë¯¸ì°ê²° â ì¤ì  í­ì íì¸íì¸ì', 'error'); return; }
+  toast('ð Trello ëê¸°í ì¤...', 'info');
 
   // Post comment summary
   const ok1 = await trelloPost('sync_all', {});
@@ -605,33 +606,33 @@ async function syncAllToTrello() {
   const bg = calcBudget();
   const sc = calcScores();
 
-  const desc = `## 🌴 몰디브 태교여행 플래너 | 가연 & 영욱\n\n**마지막 동기화**: ${ts()} by ${state.trello.name}\n\n---\n\n### ✈️ 선택 항공\n${fl ? fl.airline+' '+fl.flight+' · '+fl.dep+'→'+fl.arr+' · SGD '+fl.price+'/인' : '미선택'}\n\n### 🏝 선택 리조트\n${rs ? rs.name+' · USD '+rs.price+'/박 ('+rs.tier+')' : '미선택'}\n\n### 🏊 선택 활동 (${acts.length}개)\n${acts.length ? acts.map(a=>'- '+a.emoji+' '+a.name+' (USD '+a.price+')').join('\n') : '미선택'}\n\n### 💰 예상 예산\n**총 SGD ${bg.total.toLocaleString()}**\n- 항공 (2인): SGD ${bg.fSGD.toLocaleString()}\n- 리조트 (3박): SGD ${bg.rSGD.toLocaleString()}\n- 활동: SGD ${bg.aSGD.toLocaleString()}\n- 기타: SGD ${bg.misc.toLocaleString()}\n\n### 🤰 임산부 점수\n만족도 ${sc.sat}점 · 피로도 ${sc.fat}점 · 종합 **${sc.preg}점**\n\n---\n*이 설명은 협업 플래너에서 자동으로 업데이트됩니다*`;
+  const desc = `## ð´ ëª°ëë¸ íêµì¬í íëë | ê°ì° & ìì±\n\n**ë§ì§ë§ ëê¸°í**: ${ts()} by ${state.trello.name}\n\n---\n\n### âï¸ ì í í­ê³µ\n${fl ? fl.airline+' '+fl.flight+' Â· '+fl.dep+'â'+fl.arr+' Â· SGD '+fl.price+'/ì¸' : 'ë¯¸ì í'}\n\n### ð ì í ë¦¬ì¡°í¸\n${rs ? rs.name+' Â· USD '+rs.price+'/ë° ('+rs.tier+')' : 'ë¯¸ì í'}\n\n### ð ì í íë (${acts.length}ê°)\n${acts.length ? acts.map(a=>'- '+a.emoji+' '+a.name+' (USD '+a.price+')').join('\n') : 'ë¯¸ì í'}\n\n### ð° ìì ìì°\n**ì´ SGD ${bg.total.toLocaleString()}**\n- í­ê³µ (2ì¸): SGD ${bg.fSGD.toLocaleString()}\n- ë¦¬ì¡°í¸ (3ë°): SGD ${bg.rSGD.toLocaleString()}\n- íë: SGD ${bg.aSGD.toLocaleString()}\n- ê¸°í: SGD ${bg.misc.toLocaleString()}\n\n### ð¤° ìì°ë¶ ì ì\në§ì¡±ë ${sc.sat}ì  Â· í¼ë¡ë ${sc.fat}ì  Â· ì¢í© **${sc.preg}ì **\n\n---\n*ì´ ì¤ëªì íì íëëìì ìëì¼ë¡ ìë°ì´í¸ë©ëë¤*`;
 
   const ok2 = await Trello.updateDesc(desc);
   if (ok1 && ok2.ok) {
-    toast('✅ Trello 동기화 완료!', 'success');
-    addLog('🔄', 'Trello 전체 동기화 완료 (댓글 + 카드 설명 업데이트)', true, '#059669');
+    toast('â Trello ëê¸°í ìë£!', 'success');
+    addLog('ð', 'Trello ì ì²´ ëê¸°í ìë£ (ëê¸ + ì¹´ë ì¤ëª ìë°ì´í¸)', true, '#059669');
   } else {
-    toast('⚠️ 일부 동기화 실패', 'error');
+    toast('â ï¸ ì¼ë¶ ëê¸°í ì¤í¨', 'error');
   }
 }
 
 async function syncPlannerToTrello() {
-  if (!Trello.isConnected()) { toast('Trello 미연결', 'error'); return; }
-  const days = [{k:'d1',l:'Day 1 — 도착'},{k:'d2',l:'Day 2 — 즐기기'},{k:'d3',l:'Day 3 — 귀환'}];
-  const slots = [{k:'am',l:'오전'},{k:'pm',l:'오후'},{k:'eve',l:'저녁'}];
+  if (!Trello.isConnected()) { toast('Trello ë¯¸ì°ê²°', 'error'); return; }
+  const days = [{k:'d1',l:'Day 1 â ëì°©'},{k:'d2',l:'Day 2 â ì¦ê¸°ê¸°'},{k:'d3',l:'Day 3 â ê·í'}];
+  const slots = [{k:'am',l:'ì¤ì '},{k:'pm',l:'ì¤í'},{k:'eve',l:'ì ë'}];
   const lines = days.flatMap(d => slots.map(s => {
     const p = state.plans[d.k][s.k];
-    const actLabel = PLAN_OPTS.find(o=>o.v===p.act)?.l || '—';
-    return `**${d.l} ${s.l}**: ${actLabel}${p.note ? ' — '+p.note : ''}`;
+    const actLabel = PLAN_OPTS.find(o=>o.v===p.act)?.l || 'â';
+    return `**${d.l} ${s.l}**: ${actLabel}${p.note ? ' â '+p.note : ''}`;
   }));
-  const text = `📅 3일 일정 업데이트\n━━━━━━━━━━━━━━━━━━━━━\n${lines.join('\n')}\n⏰ ${ts()} | 👤 ${state.trello.name}`;
+  const text = `ð 3ì¼ ì¼ì  ìë°ì´í¸\nâââââââââââââââââââââ\n${lines.join('\n')}\nâ° ${ts()} | ð¤ ${state.trello.name}`;
   const r = await Trello.postComment(text);
-  if (r.ok) { toast('✅ 일정이 Trello에 동기화됐습니다!', 'success'); addLog('📅', '3일 일정 Trello 동기화', true, '#7c3aed'); }
-  else toast('❌ Trello 오류: '+r.error?.substring(0,40), 'error');
+  if (r.ok) { toast('â ì¼ì ì´ Trelloì ëê¸°íëìµëë¤!', 'success'); addLog('ð', '3ì¼ ì¼ì  Trello ëê¸°í', true, '#7c3aed'); }
+  else toast('â Trello ì¤ë¥: '+r.error?.substring(0,40), 'error');
 }
 
-// ─── SCORE & BUDGET ──────────────────────────────────────────
+// âââ SCORE & BUDGET ââââââââââââââââââââââââââââââââââââââââââ
 function calcScores() {
   const fl = FLIGHTS.find(f=>f.id===state.selFlight);
   const rs = RESORTS.find(r=>r.id===state.selResort);
@@ -654,12 +655,12 @@ function calcBudget() {
   return {fSGD,rSGD,aSGD,misc,total:fSGD+rSGD+aSGD+misc};
 }
 
-// ─── FEEDBACK ────────────────────────────────────────────────
+// âââ FEEDBACK ââââââââââââââââââââââââââââââââââââââââââââââââ
 async function addFeedback(key, who, txt) {
   if(!state.feedbacks[key]) state.feedbacks[key]=[];
   state.feedbacks[key].push({id:Date.now(), who, txt, ts:ts()});
   saveState();
-  addLog('💬', `${who}: "${txt.substring(0,30)}${txt.length>30?'…':''}"`, false, '#7c3aed');
+  addLog('ð¬', `${who}: "${txt.substring(0,30)}${txt.length>30?'â¦':''}"`, false, '#7c3aed');
   renderAll();
 }
 
@@ -667,7 +668,7 @@ async function addFeedbackAndPost(key, who, txt) {
   await addFeedback(key, who, txt);
   if (state.notify.comment && Trello.isConnected()) {
     const r = await trelloPost('comment', {who, txt, key});
-    if(r) { addLog('💬', `${who}: "${txt.substring(0,20)}…" → Trello 전송`, true, '#7c3aed'); renderLog(); }
+    if(r) { addLog('ð¬', `${who}: "${txt.substring(0,20)}â¦" â Trello ì ì¡`, true, '#7c3aed'); renderLog(); }
   }
 }
 
@@ -675,23 +676,23 @@ function renderFeedbackBox(key, placeholder) {
   const list = state.feedbacks[key] || [];
   const wrap = document.createElement('div'); wrap.className = 'fb-wrap';
   const toggle = document.createElement('button'); toggle.className = 'fb-toggle';
-  toggle.innerHTML = `💬 ${list.length ? '의견 ('+list.length+')' : '의견 남기기'}`;
+  toggle.innerHTML = `ð¬ ${list.length ? 'ìê²¬ ('+list.length+')' : 'ìê²¬ ë¨ê¸°ê¸°'}`;
   const body = document.createElement('div'); body.className = 'fb-body';
   const fbList = document.createElement('div'); fbList.className = 'fb-list';
   list.forEach(f=>{
     const item = document.createElement('div'); item.className = 'fb-item';
-    item.innerHTML=`<div class="fb-who ${f.who==='가연'?'gy':'yo'}">${f.who} · ${f.ts}</div><div class="fb-txt">${f.txt}</div>`;
+    item.innerHTML=`<div class="fb-who ${f.who==='ê°ì°'?'gy':'yo'}">${f.who} Â· ${f.ts}</div><div class="fb-txt">${f.txt}</div>`;
     fbList.appendChild(item);
   });
   const form = document.createElement('div'); form.className = 'fb-form';
   const inpWrap = document.createElement('div'); inpWrap.className = 'fb-inp-wrap';
   const sel = document.createElement('select'); sel.className = 'fb-who-sel';
-  ['가연','영욱'].forEach(n=>{const o=document.createElement('option');o.value=n;o.textContent=n;sel.appendChild(o);});
-  const inp = document.createElement('textarea'); inp.className = 'fb-inp'; inp.placeholder = placeholder||'의견...';
+  ['ê°ì°','ìì±'].forEach(n=>{const o=document.createElement('option');o.value=n;o.textContent=n;sel.appendChild(o);});
+  const inp = document.createElement('textarea'); inp.className = 'fb-inp'; inp.placeholder = placeholder||'ìê²¬...';
   inpWrap.appendChild(sel); inpWrap.appendChild(inp);
   const actions = document.createElement('div'); actions.className = 'fb-actions';
-  const btnLocal = document.createElement('button'); btnLocal.className = 'fb-send-local'; btnLocal.textContent = '💾 저장만';
-  const btnTrello = document.createElement('button'); btnTrello.className = 'fb-send-trello'; btnTrello.innerHTML = '🔲 Trello 전송';
+  const btnLocal = document.createElement('button'); btnLocal.className = 'fb-send-local'; btnLocal.textContent = 'ð¾ ì ì¥ë§';
+  const btnTrello = document.createElement('button'); btnTrello.className = 'fb-send-trello'; btnTrello.innerHTML = 'ð² Trello ì ì¡';
   const doLocal = () => { if(!inp.value.trim())return; addFeedback(key, sel.value, inp.value.trim()); inp.value=''; };
   const doTrello = () => { if(!inp.value.trim())return; addFeedbackAndPost(key, sel.value, inp.value.trim()); inp.value=''; };
   btnLocal.addEventListener('pointerdown', e=>{e.preventDefault();doLocal();});
@@ -705,52 +706,52 @@ function renderFeedbackBox(key, placeholder) {
   return wrap;
 }
 
-// ─── BOOKING STATUS ───────────────────────────────────────────
+// âââ BOOKING STATUS âââââââââââââââââââââââââââââââââââââââââââ
 function bookingStatusBadge(key) {
   const s = state.bookingStatus[key];
-  if(!s||s==='none') return '<span style="font-size:10px;color:#94a3b8">미예약</span>';
-  if(s==='emailed') return '<span class="badge bt">📧 이메일 발송</span>';
-  if(s==='booked') return '<span class="badge bv">✅ 예약 완료</span>';
-  if(s==='pending') return '<span class="badge br">⏳ 확인 중</span>';
+  if(!s||s==='none') return '<span style="font-size:10px;color:#94a3b8">ë¯¸ìì½</span>';
+  if(s==='emailed') return '<span class="badge bt">ð§ ì´ë©ì¼ ë°ì¡</span>';
+  if(s==='booked') return '<span class="badge bv">â ìì½ ìë£</span>';
+  if(s==='pending') return '<span class="badge br">â³ íì¸ ì¤</span>';
   return '';
 }
 
 function statusDropdown(key, itemName) {
   const wrap = document.createElement('div'); wrap.className = 'status-row';
-  const lbl = document.createElement('span'); lbl.className = 'status-label'; lbl.textContent = '예약 상태:';
+  const lbl = document.createElement('span'); lbl.className = 'status-label'; lbl.textContent = 'ìì½ ìí:';
   const sel = document.createElement('select'); sel.className = 'status-sel';
-  [['none','미예약'],['emailed','📧 이메일 발송'],['pending','⏳ 확인 중'],['booked','✅ 예약 완료']].forEach(([v,l])=>{
+  [['none','ë¯¸ìì½'],['emailed','ð§ ì´ë©ì¼ ë°ì¡'],['pending','â³ íì¸ ì¤'],['booked','â ìì½ ìë£']].forEach(([v,l])=>{
     const o=document.createElement('option');o.value=v;o.textContent=l;
     if((state.bookingStatus[key]||'none')===v)o.selected=true;
     sel.appendChild(o);
   });
 
   const trelloBtn = document.createElement('button'); trelloBtn.className = 'status-trello-btn';
-  trelloBtn.innerHTML = '🔲 Trello 알림 전송';
+  trelloBtn.innerHTML = 'ð² Trello ìë¦¼ ì ì¡';
 
   sel.addEventListener('change', async () => {
     state.bookingStatus[key] = sel.value;
     saveState(); renderDash();
-    addLog('🎫', `예약 상태: ${itemName} → ${sel.options[sel.selectedIndex].text}`, false, '#d97706');
+    addLog('ð«', `ìì½ ìí: ${itemName} â ${sel.options[sel.selectedIndex].text}`, false, '#d97706');
     if (state.notify.booking && Trello.isConnected()) {
       const r = await trelloPost('booking_status', {name: itemName, status: sel.value});
-      if(r) { toast('✅ Trello에 상태 변경 알림 전송!', 'success'); addLog('🔔', `Trello 알림: ${itemName} 상태 변경`, true, '#059669'); renderLog(); }
+      if(r) { toast('â Trelloì ìí ë³ê²½ ìë¦¼ ì ì¡!', 'success'); addLog('ð', `Trello ìë¦¼: ${itemName} ìí ë³ê²½`, true, '#059669'); renderLog(); }
     }
   });
 
   trelloBtn.addEventListener('pointerdown', async e => {
     e.preventDefault();
-    if (!Trello.isConnected()) { toast('Trello 미연결', 'error'); return; }
+    if (!Trello.isConnected()) { toast('Trello ë¯¸ì°ê²°', 'error'); return; }
     const r = await trelloPost('booking_status', {name: itemName, status: state.bookingStatus[key]||'none'});
-    if(r) { toast('✅ Trello에 알림 전송!', 'success'); addLog('🔔', `수동 알림: ${itemName}`, true, '#059669'); renderLog(); }
-    else toast('❌ Trello 오류', 'error');
+    if(r) { toast('â Trelloì ìë¦¼ ì ì¡!', 'success'); addLog('ð', `ìë ìë¦¼: ${itemName}`, true, '#059669'); renderLog(); }
+    else toast('â Trello ì¤ë¥', 'error');
   });
 
   wrap.appendChild(lbl); wrap.appendChild(sel); wrap.appendChild(trelloBtn);
   return wrap;
 }
 
-// ─── RENDER ALL ──────────────────────────────────────────────
+// âââ RENDER ALL ââââââââââââââââââââââââââââââââââââââââââââââ
 function renderAll() { renderDash(); renderFlights(); renderResorts(); renderPlanner(); renderActs(); renderLog(); }
 
 function renderDash() {
@@ -758,37 +759,37 @@ function renderDash() {
   const grid=document.getElementById('kpi-grid'); if(!grid)return; grid.innerHTML='';
   const booked=Object.values(state.bookingStatus).filter(s=>s==='booked').length;
   const totalFb=Object.values(state.feedbacks).reduce((s,a)=>s+a.length,0);
-  [{v:bg.total?'SGD '+bg.total.toLocaleString():'—',l:'예상 총 예산'},
-   {v:sc.preg?sc.preg+'점':'—',l:'임산부 점수'},
-   {v:booked+'개',l:'예약 완료'},
-   {v:sc.sat?sc.sat+'점':'—',l:'만족도'},
-   {v:sc.fat?sc.fat+'점':'—',l:'피로도'},
-   {v:totalFb+'개',l:'총 의견'},
+  [{v:bg.total?'SGD '+bg.total.toLocaleString():'â',l:'ìì ì´ ìì°'},
+   {v:sc.preg?sc.preg+'ì ':'â',l:'ìì°ë¶ ì ì'},
+   {v:booked+'ê°',l:'ìì½ ìë£'},
+   {v:sc.sat?sc.sat+'ì ':'â',l:'ë§ì¡±ë'},
+   {v:sc.fat?sc.fat+'ì ':'â',l:'í¼ë¡ë'},
+   {v:totalFb+'ê°',l:'ì´ ìê²¬'},
   ].forEach(k=>{const d=document.createElement('div');d.className='kpi';d.innerHTML=`<div class="kv">${k.v}</div><div class="kl">${k.l}</div>`;grid.appendChild(d);});
 
-  document.getElementById('sc-sat').textContent=sc.sat?sc.sat+'점':'—';
-  document.getElementById('sc-fat').textContent=sc.fat?sc.fat+'점':'—';
-  document.getElementById('sc-preg').textContent=sc.preg?sc.preg+'점':'—';
+  document.getElementById('sc-sat').textContent=sc.sat?sc.sat+'ì ':'â';
+  document.getElementById('sc-fat').textContent=sc.fat?sc.fat+'ì ':'â';
+  document.getElementById('sc-preg').textContent=sc.preg?sc.preg+'ì ':'â';
   document.getElementById('bar-sat').style.width=sc.sat+'%';
   document.getElementById('bar-fat').style.width=sc.fat+'%';
   document.getElementById('bar-preg').style.width=sc.preg+'%';
 
   const bdet=document.getElementById('budget-detail'); if(!bdet)return;
   if(bg.total){
-    const rows=[{l:'✈️ 항공 (2인)',v:bg.fSGD,c:'#0369a1'},{l:'🏝 리조트 (3박)',v:bg.rSGD,c:'#7c3aed'},{l:'🏊 활동',v:bg.aSGD,c:'#059669'},{l:'💼 기타',v:bg.misc,c:'#d97706'}];
-    bdet.innerHTML=rows.map(r=>{const pct=Math.round(r.v/bg.total*100)||0;return`<div style="margin-bottom:7px"><div style="display:flex;justify-content:space-between;font-size:11px;font-weight:600;margin-bottom:2px"><span>${r.l}</span><span>SGD ${r.v.toLocaleString()} (${pct}%)</span></div><div class="bar-track"><div class="bar-fill" style="width:${pct}%;background:${r.c}"></div></div></div>`;}).join('')+`<div style="font-size:15px;font-weight:800;color:var(--accent);text-align:right;border-top:1px solid var(--border);padding-top:7px;margin-top:4px">합계 SGD ${bg.total.toLocaleString()}</div>`;
-  } else { bdet.innerHTML='<p style="color:var(--muted);font-size:12px">항공 & 리조트 선택 후 계산됩니다.</p>'; }
+    const rows=[{l:'âï¸ í­ê³µ (2ì¸)',v:bg.fSGD,c:'#0369a1'},{l:'ð ë¦¬ì¡°í¸ (3ë°)',v:bg.rSGD,c:'#7c3aed'},{l:'ð íë',v:bg.aSGD,c:'#059669'},{l:'ð¼ ê¸°í',v:bg.misc,c:'#d97706'}];
+    bdet.innerHTML=rows.map(r=>{const pct=Math.round(r.v/bg.total*100)||0;return`<div style="margin-bottom:7px"><div style="display:flex;justify-content:space-between;font-size:11px;font-weight:600;margin-bottom:2px"><span>${r.l}</span><span>SGD ${r.v.toLocaleString()} (${pct}%)</span></div><div class="bar-track"><div class="bar-fill" style="width:${pct}%;background:${r.c}"></div></div></div>`;}).join('')+`<div style="font-size:15px;font-weight:800;color:var(--accent);text-align:right;border-top:1px solid var(--border);padding-top:7px;margin-top:4px">í©ê³ SGD ${bg.total.toLocaleString()}</div>`;
+  } else { bdet.innerHTML='<p style="color:var(--muted);font-size:12px">í­ê³µ & ë¦¬ì¡°í¸ ì í í ê³ì°ë©ëë¤.</p>'; }
 
   const bsd=document.getElementById('booking-status-dash'); if(!bsd)return;
   const fl=FLIGHTS.find(f=>f.id===state.selFlight);
   const rs=RESORTS.find(r=>r.id===state.selResort);
   const acts=ACTIVITIES.filter(a=>state.selActs.has(a.id));
-  const items=[...(fl?[{key:'flight_'+fl.id,label:'✈️ '+fl.airline+' '+fl.flight}]:[]),...(rs?[{key:'resort_'+rs.id,label:'🏝 '+rs.name}]:[]),...acts.map(a=>({key:'act_'+a.id,label:a.emoji+a.name}))];
-  bsd.innerHTML=items.length?items.map(i=>`<div style="display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid var(--border);font-size:11px"><span>${i.label}</span>${bookingStatusBadge(i.key)}</div>`).join(''):'<p style="color:var(--muted);font-size:12px">항공/리조트/활동을 선택하면 표시됩니다.</p>';
+  const items=[...(fl?[{key:'flight_'+fl.id,label:'âï¸ '+fl.airline+' '+fl.flight}]:[]),...(rs?[{key:'resort_'+rs.id,label:'ð '+rs.name}]:[]),...acts.map(a=>({key:'act_'+a.id,label:a.emoji+a.name}))];
+  bsd.innerHTML=items.length?items.map(i=>`<div style="display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid var(--border);font-size:11px"><span>${i.label}</span>${bookingStatusBadge(i.key)}</div>`).join(''):'<p style="color:var(--muted);font-size:12px">í­ê³µ/ë¦¬ì¡°í¸/íëì ì ííë©´ íìë©ëë¤.</p>';
 
   const af=document.getElementById('all-feedbacks'); if(!af)return;
   const allFbs=Object.entries(state.feedbacks).flatMap(([k,arr])=>arr.map(f=>({...f,key:k})));
-  af.innerHTML=allFbs.length?allFbs.sort((a,b)=>b.id-a.id).map(f=>`<div class="fb-item" style="margin-bottom:5px"><div class="fb-who ${f.who==='가연'?'gy':'yo'}">${f.who} · ${f.ts}</div><div class="fb-txt">${f.txt}</div></div>`).join(''):'<p style="color:var(--muted);font-size:12px">아직 의견이 없습니다.</p>';
+  af.innerHTML=allFbs.length?allFbs.sort((a,b)=>b.id-a.id).map(f=>`<div class="fb-item" style="margin-bottom:5px"><div class="fb-who ${f.who==='ê°ì°'?'gy':'yo'}">${f.who} Â· ${f.ts}</div><div class="fb-txt">${f.txt}</div></div>`).join(''):'<p style="color:var(--muted);font-size:12px">ìì§ ìê²¬ì´ ììµëë¤.</p>';
 }
 
 function renderFlights() {
@@ -796,47 +797,47 @@ function renderFlights() {
   FLIGHTS.forEach(f=>{
     const card=document.createElement('div');
     card.className='card'+(state.selFlight===f.id?' sel':'');
-    const mailBody=`안녕하세요,\n싱가포르에서 출발하는 몰디브 태교여행을 계획 중입니다.\n임신 20주차이며, 6월 12일 SIN→MLE ${f.flight}편 예약을 희망합니다.\n벌크헤드 좌석 또는 넓은 좌석 배정이 가능한지 확인 부탁드립니다.\n\n영욱 / ohyoungouk@gmail.com`;
+    const mailBody=`ìëíì¸ì,\nì±ê°í¬ë¥´ìì ì¶ë°íë ëª°ëë¸ íêµì¬íì ê³í ì¤ìëë¤.\nìì  20ì£¼ì°¨ì´ë©°, 6ì 12ì¼ SINâMLE ${f.flight}í¸ ìì½ì í¬ë§í©ëë¤.\në²í¬í¤ë ì¢ì ëë ëì ì¢ì ë°°ì ì´ ê°ë¥íì§ íì¸ ë¶íëë¦½ëë¤.\n\nìì± / ohyoungouk@gmail.com`;
     card.innerHTML=`
-      ${f.rec?'<span class="badge br">⭐ 임산부 추천</span>':''}
+      ${f.rec?'<span class="badge br">â­ ìì°ë¶ ì¶ì²</span>':''}
       <div class="c-h">
-        <div class="c-ico">✈️</div>
+        <div class="c-ico">âï¸</div>
         <div class="c-body">
           <h3>${f.airline} ${f.flight}</h3>
-          <div style="font-size:11px;color:var(--sec);margin-bottom:3px">${f.dep}→${f.arr} · ${f.dur} · ${f.type}</div>
+          <div style="font-size:11px;color:var(--sec);margin-bottom:3px">${f.dep}â${f.arr} Â· ${f.dur} Â· ${f.type}</div>
           <div class="price-row">
-            <span class="price-val">SGD ${f.price}<span class="price-sub">/인 = SGD ${f.price*2} 2인</span></span>
+            <span class="price-val">SGD ${f.price}<span class="price-sub">/ì¸ = SGD ${f.price*2} 2ì¸</span></span>
             <span class="avail ${f.availOk?'avail-ok':'avail-warn'}">${f.availability}</span>
           </div>
           <div style="font-size:11px;color:var(--sec);margin:3px 0">${f.note}</div>
-          <div style="font-size:11px;color:#059669">💺 ${f.seat}</div>
+          <div style="font-size:11px;color:#059669">ðº ${f.seat}</div>
         </div>
       </div>`;
     const selBtn=document.createElement('button');
     selBtn.className='sel-btn'+(state.selFlight===f.id?' on':'');
-    selBtn.textContent=state.selFlight===f.id?'✓ 선택됨':'이 항공편 선택';
+    selBtn.textContent=state.selFlight===f.id?'â ì íë¨':'ì´ í­ê³µí¸ ì í';
     selBtn.addEventListener('pointerdown', async e=>{
       e.preventDefault(); state.selFlight=f.id; saveState(); renderAll();
-      addLog('✈️', `항공 선택: ${f.airline} ${f.flight}`, false, '#0369a1');
+      addLog('âï¸', `í­ê³µ ì í: ${f.airline} ${f.flight}`, false, '#0369a1');
       if(state.notify.select && Trello.isConnected()) {
         const r=await trelloPost('flight_selected',f);
-        if(r){toast('✅ 항공 선택 Trello 전송!','success');addLog('✈️','항공 선택 → Trello 알림',true,'#059669');renderLog();}
+        if(r){toast('â í­ê³µ ì í Trello ì ì¡!','success');addLog('âï¸','í­ê³µ ì í â Trello ìë¦¼',true,'#059669');renderLog();}
       }
     });
     const bookRow=document.createElement('div'); bookRow.className='book-row';
-    const btnBook=document.createElement('a');btnBook.href=f.bookUrl;btnBook.target='_blank';btnBook.className='btn btn-primary';btnBook.textContent='🎫 직접 예약';
-    const btnCheck=document.createElement('a');btnCheck.href=f.checkUrl;btnCheck.target='_blank';btnCheck.className='btn btn-ghost';btnCheck.textContent='💰 가격 확인';
+    const btnBook=document.createElement('a');btnBook.href=f.bookUrl;btnBook.target='_blank';btnBook.className='btn btn-primary';btnBook.textContent='ð« ì§ì  ìì½';
+    const btnCheck=document.createElement('a');btnCheck.href=f.checkUrl;btnCheck.target='_blank';btnCheck.className='btn btn-ghost';btnCheck.textContent='ð° ê°ê²© íì¸';
     const btnMail=document.createElement('a');
     btnMail.href=`mailto:${f.email}?subject=${encodeURIComponent('Seat Request - SIN to MLE '+f.flight)}&body=${encodeURIComponent(mailBody)}`;
-    btnMail.className='btn btn-secondary';btnMail.textContent='📧 문의';
+    btnMail.className='btn btn-secondary';btnMail.textContent='ð§ ë¬¸ì';
     btnMail.addEventListener('click', async ()=>{
-      addLog('📧', `${f.airline} ${f.flight} 문의 이메일 열기`, false, '#7c3aed');
-      if(state.notify.email && Trello.isConnected()){const r=await trelloPost('email_sent',{name:f.airline+' '+f.flight,email:f.email});if(r){toast('✅ 이메일 발송 기록 Trello 전송!','success');addLog('📧','이메일 발송 → Trello 알림',true,'#059669');renderLog();}}
+      addLog('ð§', `${f.airline} ${f.flight} ë¬¸ì ì´ë©ì¼ ì´ê¸°`, false, '#7c3aed');
+      if(state.notify.email && Trello.isConnected()){const r=await trelloPost('email_sent',{name:f.airline+' '+f.flight,email:f.email});if(r){toast('â ì´ë©ì¼ ë°ì¡ ê¸°ë¡ Trello ì ì¡!','success');addLog('ð§','ì´ë©ì¼ ë°ì¡ â Trello ìë¦¼',true,'#059669');renderLog();}}
     });
     bookRow.appendChild(btnBook);bookRow.appendChild(btnCheck);bookRow.appendChild(btnMail);
     card.appendChild(selBtn);card.appendChild(bookRow);
     card.appendChild(statusDropdown('flight_'+f.id, f.airline+' '+f.flight));
-    card.appendChild(renderFeedbackBox('flight_'+f.id,'이 항공편 의견...'));
+    card.appendChild(renderFeedbackBox('flight_'+f.id,'ì´ í­ê³µí¸ ìê²¬...'));
     el.appendChild(card);
   });
 }
@@ -848,55 +849,55 @@ function renderResorts() {
     card.className='card'+(state.selResort===r.id?' sel':'');
     const sgd3n=Math.round(r.price*3*1.35);
     card.innerHTML=`
-      <span class="badge ${r.tier==='VALUE'?'bv':'bl'}">${r.tier==='VALUE'?'💚 VALUE':'💜 LUXURY'}</span>
-      ${!r.availOk?'<span class="badge bn" style="margin-left:4px">⚡ 잔여 적음</span>':''}
+      <span class="badge ${r.tier==='VALUE'?'bv':'bl'}">${r.tier==='VALUE'?'ð VALUE':'ð LUXURY'}</span>
+      ${!r.availOk?'<span class="badge bn" style="margin-left:4px">â¡ ìì¬ ì ì</span>':''}
       <div class="c-h">
         <div class="c-ico">${r.emoji}</div>
         <div class="c-body">
           <h3>${r.name}</h3>
           <div class="price-row">
-            <span class="price-val">USD ${r.price.toLocaleString()}/박<span class="price-sub"> 3박 SGD ${sgd3n.toLocaleString()}</span></span>
+            <span class="price-val">USD ${r.price.toLocaleString()}/ë°<span class="price-sub"> 3ë° SGD ${sgd3n.toLocaleString()}</span></span>
             <span class="avail ${r.availOk?'avail-ok':'avail-warn'}">${r.availability}</span>
           </div>
-          <div style="font-size:10px;color:var(--muted);margin-bottom:3px">참고가격 ${r.priceRange}</div>
+          <div style="font-size:10px;color:var(--muted);margin-bottom:3px">ì°¸ê³ ê°ê²© ${r.priceRange}</div>
           <div style="font-size:11px;color:var(--sec);margin-bottom:3px">${r.note}</div>
-          <div style="font-size:11px;margin-bottom:4px"><strong>🤰 베이비문:</strong> <span style="color:var(--sec)">${r.babymoon}</span></div>
-          <div>${r.pros.map(p=>`<span class="tag">✅ ${p}</span>`).join('')}${r.cons.map(c=>`<span class="tag" style="background:#fff1f2;border-color:#fecdd3;color:#e11d48">⚠️ ${c}</span>`).join('')}</div>
-          <div style="font-size:10px;color:var(--muted);margin-top:4px">📞 ${r.tel}</div>
+          <div style="font-size:11px;margin-bottom:4px"><strong>ð¤° ë² ì´ë¹ë¬¸:</strong> <span style="color:var(--sec)">${r.babymoon}</span></div>
+          <div>${r.pros.map(p=>`<span class="tag">â ${p}</span>`).join('')}${r.cons.map(c=>`<span class="tag" style="background:#fff1f2;border-color:#fecdd3;color:#e11d48">â ï¸ ${c}</span>`).join('')}</div>
+          <div style="font-size:10px;color:var(--muted);margin-top:4px">ð ${r.tel}</div>
         </div>
       </div>`;
     const selBtn=document.createElement('button');
     selBtn.className='sel-btn'+(state.selResort===r.id?' on':'');
-    selBtn.textContent=state.selResort===r.id?'✓ 선택됨':'이 리조트 선택';
+    selBtn.textContent=state.selResort===r.id?'â ì íë¨':'ì´ ë¦¬ì¡°í¸ ì í';
     selBtn.addEventListener('pointerdown', async e=>{
       e.preventDefault(); state.selResort=r.id; saveState(); renderAll();
-      addLog('🏝', `리조트 선택: ${r.name}`, false, '#7c3aed');
-      if(state.notify.select && Trello.isConnected()){const rr=await trelloPost('resort_selected',r);if(rr){toast('✅ 리조트 선택 Trello 전송!','success');addLog('🏝','리조트 선택 → Trello 알림',true,'#059669');renderLog();}}
+      addLog('ð', `ë¦¬ì¡°í¸ ì í: ${r.name}`, false, '#7c3aed');
+      if(state.notify.select && Trello.isConnected()){const rr=await trelloPost('resort_selected',r);if(rr){toast('â ë¦¬ì¡°í¸ ì í Trello ì ì¡!','success');addLog('ð','ë¦¬ì¡°í¸ ì í â Trello ìë¦¼',true,'#059669');renderLog();}}
     });
     const bookRow=document.createElement('div'); bookRow.className='book-row';
-    const btnBook=document.createElement('a');btnBook.href=r.bookUrl;btnBook.target='_blank';btnBook.className='btn btn-primary';btnBook.textContent='🏝 공식 예약';
-    const btnCom=document.createElement('a');btnCom.href=r.bookingComUrl;btnCom.target='_blank';btnCom.className='btn btn-green';btnCom.textContent='🔖 Booking.com';
-    const btnCheck=document.createElement('a');btnCheck.href=r.checkUrl;btnCheck.target='_blank';btnCheck.className='btn btn-ghost';btnCheck.textContent='💰 가격 확인';
+    const btnBook=document.createElement('a');btnBook.href=r.bookUrl;btnBook.target='_blank';btnBook.className='btn btn-primary';btnBook.textContent='ð ê³µì ìì½';
+    const btnCom=document.createElement('a');btnCom.href=r.bookingComUrl;btnCom.target='_blank';btnCom.className='btn btn-green';btnCom.textContent='ð Booking.com';
+    const btnCheck=document.createElement('a');btnCheck.href=r.checkUrl;btnCheck.target='_blank';btnCheck.className='btn btn-ghost';btnCheck.textContent='ð° ê°ê²© íì¸';
     const btnMail=document.createElement('a');
     btnMail.href=`mailto:${r.email}?subject=${encodeURIComponent(r.emailSubject)}&body=${encodeURIComponent(r.emailBody)}`;
-    btnMail.className='btn btn-secondary';btnMail.textContent='📧 이메일 예약';
+    btnMail.className='btn btn-secondary';btnMail.textContent='ð§ ì´ë©ì¼ ìì½';
     btnMail.addEventListener('click', async ()=>{
       state.bookingStatus['resort_'+r.id]='emailed'; saveState(); renderDash();
-      addLog('📧', `${r.name} 예약 이메일 발송`, false, '#7c3aed');
-      if(state.notify.email && Trello.isConnected()){const rr=await trelloPost('email_sent',{name:r.name,email:r.email});if(rr){toast('✅ 이메일 발송 기록 Trello 전송!','success');addLog('📧','리조트 이메일 발송 → Trello 알림',true,'#059669');renderLog();}}
+      addLog('ð§', `${r.name} ìì½ ì´ë©ì¼ ë°ì¡`, false, '#7c3aed');
+      if(state.notify.email && Trello.isConnected()){const rr=await trelloPost('email_sent',{name:r.name,email:r.email});if(rr){toast('â ì´ë©ì¼ ë°ì¡ ê¸°ë¡ Trello ì ì¡!','success');addLog('ð§','ë¦¬ì¡°í¸ ì´ë©ì¼ ë°ì¡ â Trello ìë¦¼',true,'#059669');renderLog();}}
     });
     bookRow.appendChild(btnBook);bookRow.appendChild(btnCom);bookRow.appendChild(btnCheck);bookRow.appendChild(btnMail);
     card.appendChild(selBtn);card.appendChild(bookRow);
     card.appendChild(statusDropdown('resort_'+r.id, r.name));
-    card.appendChild(renderFeedbackBox('resort_'+r.id,'이 리조트 의견...'));
+    card.appendChild(renderFeedbackBox('resort_'+r.id,'ì´ ë¦¬ì¡°í¸ ìê²¬...'));
     el.appendChild(card);
   });
 }
 
 function renderPlanner() {
   const el=document.getElementById('planner'); if(!el)return; el.innerHTML='';
-  const days=[{key:'d1',label:'Day 1 — 도착 & 체크인'},{key:'d2',label:'Day 2 — 본격 즐기기'},{key:'d3',label:'Day 3 — 마지막 & 귀환'}];
-  const slots=[{key:'am',label:'☀️ 오전'},{key:'pm',label:'🌤 오후'},{key:'eve',label:'🌙 저녁'}];
+  const days=[{key:'d1',label:'Day 1 â ëì°© & ì²´í¬ì¸'},{key:'d2',label:'Day 2 â ë³¸ê²© ì¦ê¸°ê¸°'},{key:'d3',label:'Day 3 â ë§ì§ë§ & ê·í'}];
+  const slots=[{key:'am',label:'âï¸ ì¤ì '},{key:'pm',label:'ð¤ ì¤í'},{key:'eve',label:'ð ì ë'}];
   days.forEach(d=>{
     const dh=document.createElement('div');dh.className='day-h';dh.textContent=d.label;el.appendChild(dh);
     slots.forEach(s=>{
@@ -905,10 +906,10 @@ function renderPlanner() {
       const sel=document.createElement('select');
       PLAN_OPTS.forEach(o=>{const opt=document.createElement('option');opt.value=o.v;opt.textContent=o.l;if(state.plans[d.key][s.key].act===o.v)opt.selected=true;sel.appendChild(opt);});
       sel.addEventListener('change',()=>{state.plans[d.key][s.key].act=sel.value;saveState();renderDash();});
-      const ta=document.createElement('textarea');ta.placeholder='메모... (예: 가연이 피곤하면 건너뛰기)';ta.value=state.plans[d.key][s.key].note;
+      const ta=document.createElement('textarea');ta.placeholder='ë©ëª¨... (ì: ê°ì°ì´ í¼ê³¤íë©´ ê±´ëë°ê¸°)';ta.value=state.plans[d.key][s.key].note;
       ta.addEventListener('input',()=>{state.plans[d.key][s.key].note=ta.value;saveState();});
       slot.appendChild(lbl);slot.appendChild(sel);slot.appendChild(ta);
-      slot.appendChild(renderFeedbackBox('plan_'+d.key+'_'+s.key,'이 시간대 의견...'));
+      slot.appendChild(renderFeedbackBox('plan_'+d.key+'_'+s.key,'ì´ ìê°ë ìê²¬...'));
       el.appendChild(slot);
     });
   });
@@ -918,7 +919,7 @@ function renderActs() {
   const el=document.getElementById('acts-list'); if(!el)return; el.innerHTML='';
   ACTIVITIES.forEach(a=>{
     const card=document.createElement('div');card.className='act-card card';
-    const stars='★'.repeat(a.preg)+'☆'.repeat(5-a.preg);
+    const stars='â'.repeat(a.preg)+'â'.repeat(5-a.preg);
     card.innerHTML=`
       <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px">
         <span style="font-size:24px">${a.emoji}</span>
@@ -927,45 +928,45 @@ function renderActs() {
       <div style="font-size:13px;font-weight:700;margin-bottom:3px">${a.name}</div>
       <div style="font-size:11px;color:var(--sec);margin-bottom:6px">${a.desc}</div>
       <div style="margin-bottom:6px">${a.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
-      <div style="font-size:10px;color:var(--muted);margin-bottom:4px">📌 예약: ${a.bookNote}</div>`;
+      <div style="font-size:10px;color:var(--muted);margin-bottom:4px">ð ìì½: ${a.bookNote}</div>`;
     const isSel=state.selActs.has(a.id);
     const selBtn=document.createElement('button');selBtn.className='sel-btn'+(isSel?' on':'');
-    selBtn.textContent=isSel?'✓ 일정에 추가됨':'+ 일정에 추가';
+    selBtn.textContent=isSel?'â ì¼ì ì ì¶ê°ë¨':'+ ì¼ì ì ì¶ê°';
     selBtn.addEventListener('pointerdown', async e=>{
       e.preventDefault();
       if(state.selActs.has(a.id))state.selActs.delete(a.id); else state.selActs.add(a.id);
       saveState(); renderAll();
       if(state.selActs.has(a.id)){
-        addLog(a.emoji, `활동 추가: ${a.name}`, false, '#059669');
-        if(state.notify.select && Trello.isConnected()){const r=await trelloPost('act_added',a);if(r){toast('✅ 활동 추가 Trello 전송!','success');addLog(a.emoji,'활동 추가 → Trello 알림',true,'#059669');renderLog();}}
+        addLog(a.emoji, `íë ì¶ê°: ${a.name}`, false, '#059669');
+        if(state.notify.select && Trello.isConnected()){const r=await trelloPost('act_added',a);if(r){toast('â íë ì¶ê° Trello ì ì¡!','success');addLog(a.emoji,'íë ì¶ê° â Trello ìë¦¼',true,'#059669');renderLog();}}
       }
     });
     const bookRow=document.createElement('div');bookRow.className='book-row';
-    const btnV=document.createElement('a');btnV.href=a.bookUrl;btnV.target='_blank';btnV.className='btn btn-primary';btnV.textContent='🎫 예약 링크';
+    const btnV=document.createElement('a');btnV.href=a.bookUrl;btnV.target='_blank';btnV.className='btn btn-primary';btnV.textContent='ð« ìì½ ë§í¬';
     bookRow.appendChild(btnV);
     card.appendChild(selBtn);card.appendChild(bookRow);
     card.appendChild(statusDropdown('act_'+a.id, a.emoji+a.name));
-    card.appendChild(renderFeedbackBox('act_'+a.id,'이 활동 의견...'));
+    card.appendChild(renderFeedbackBox('act_'+a.id,'ì´ íë ìê²¬...'));
     el.appendChild(card);
   });
 }
 
-// ─── DATA SYNC ───────────────────────────────────────────────
+// âââ DATA SYNC âââââââââââââââââââââââââââââââââââââââââââââââ
 function exportData() {
   const exp={...state,selActs:[...state.selActs]};
   const enc=btoa(unescape(encodeURIComponent(JSON.stringify(exp))));
-  navigator.clipboard.writeText(enc).then(()=>toast('✅ 복사 완료! 카톡으로 보내세요','success')).catch(()=>prompt('코드를 복사하세요:',enc));
+  navigator.clipboard.writeText(enc).then(()=>toast('â ë³µì¬ ìë£! ì¹´í¡ì¼ë¡ ë³´ë´ì¸ì','success')).catch(()=>prompt('ì½ëë¥¼ ë³µì¬íì¸ì:',enc));
 }
 function importData() {
-  const code=prompt('받은 코드를 붙여넣으세요:');if(!code)return;
-  try{const dec=JSON.parse(decodeURIComponent(escape(atob(code.trim()))));state={...defaultState(),...dec};state.selActs=new Set(dec.selActs||[]);saveState();renderAll();toast('✅ 데이터 불러오기 완료!','success');}
-  catch(e){toast('❌ 올바르지 않은 코드','error');}
+  const code=prompt('ë°ì ì½ëë¥¼ ë¶ì¬ë£ì¼ì¸ì:');if(!code)return;
+  try{const dec=JSON.parse(decodeURIComponent(escape(atob(code.trim()))));state={...defaultState(),...dec};state.selActs=new Set(dec.selActs||[]);saveState();renderAll();toast('â ë°ì´í° ë¶ë¬ì¤ê¸° ìë£!','success');}
+  catch(e){toast('â ì¬ë°ë¥´ì§ ìì ì½ë','error');}
 }
 function resetAll() {
-  localStorage.removeItem(LS_KEY);state=defaultState();state.selActs=new Set();renderAll();toast('🗑 초기화 완료','info');
+  localStorage.removeItem(LS_KEY);state=defaultState();state.selActs=new Set();renderAll();toast('ð ì´ê¸°í ìë£','info');
 }
 
-// ─── TABS ────────────────────────────────────────────────────
+// âââ TABS ââââââââââââââââââââââââââââââââââââââââââââââââââââ
 document.querySelectorAll('.tb').forEach(btn=>{
   btn.addEventListener('pointerdown',e=>{
     e.preventDefault();const tab=btn.dataset.tab;
@@ -975,7 +976,7 @@ document.querySelectorAll('.tb').forEach(btn=>{
   });
 });
 
-// ─── INIT ────────────────────────────────────────────────────
+// âââ INIT ââââââââââââââââââââââââââââââââââââââââââââââââââââ
 (function init() {
   // Restore settings UI
   if(state.trello.key) document.getElementById('cfg-key').value=state.trello.key;
@@ -990,7 +991,7 @@ document.querySelectorAll('.tb').forEach(btn=>{
   if(Trello.isConnected()){
     updateTrelloDot('connected');
     document.getElementById('trello-sync-now').style.display='';
-    document.getElementById('trello-pill').textContent='✅ Trello 연결됨';
+    document.getElementById('trello-pill').textContent='â Trello ì°ê²°ë¨';
   }
   renderAll();
 })();
