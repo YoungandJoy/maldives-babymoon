@@ -231,7 +231,7 @@ h2{font-size:15px;font-weight:800;margin-bottom:10px}
 <!-- ════════════════ PANELS ════════════════ -->
 
 <!-- ⚙️ SETTINGS -->
-<div class="panel active" id="panel-cfg">
+<div class="panel" id="panel-cfg">
   <div class="sec-h"><h2>⚙️ Trello 연결 설정</h2><p>한 번만 설정하면 영구 저장됩니다</p></div>
 
   <div class="info-card info-blue">
@@ -306,7 +306,7 @@ h2{font-size:15px;font-weight:800;margin-bottom:10px}
 </div>
 
 <!-- 📊 DASHBOARD -->
-<div class="panel" id="panel-dash">
+<div class="panel active" id="panel-dash">
   <div class="sec-h"><h2>📊 실시간 대시보드</h2><p>현재 선택 요약 · 예산 · 예약 현황</p></div>
   <div class="kpi-grid" id="kpi-grid"></div>
   <div class="card">
@@ -359,12 +359,12 @@ h2{font-size:15px;font-weight:800;margin-bottom:10px}
 
 <!-- TAB BAR -->
 <div class="tab-bar">
-  <button class="tb active" data-tab="cfg"><span class="ico">⚙️</span>설정</button>
-  <button class="tb" data-tab="dash"><span class="ico">📊</span>대시보드</button>
+  <button class="tb active" data-tab="dash"><span class="ico">📊</span>대시보드</button>
   <button class="tb" data-tab="flight"><span class="ico">✈️</span>항공</button>
   <button class="tb" data-tab="resort"><span class="ico">🏝</span>리조트</button>
   <button class="tb" data-tab="plan"><span class="ico">📅</span>일정</button>
   <button class="tb" data-tab="acts"><span class="ico">🏊</span>활동</button>
+  <button class="tb" data-tab="cfg"><span class="ico">⚙️</span>설정</button>
 </div>
 
 <!-- ════════════════ SCRIPT ════════════════ -->
@@ -373,16 +373,16 @@ h2{font-size:15px;font-weight:800;margin-bottom:10px}
 
 // ─── DATA ──────────────────────────────────────────────────────
 const FLIGHTS = [
-  {id:'sq182',airline:'싱가포르항공',flight:'SQ182',dep:'07:30',arr:'10:25',dur:'4h55m',type:'직항',price:780,availability:'좌석 있음',availOk:true,note:'새벽 출발 오전 도착. 임산부에게 가장 쾌적. 벌크헤드 21A 추천. ✅ 28주 미만 의사소견서 불필요. 예약 후 SQ 콜센터(+65 6223 8888)에 전화해 "임산부 벌크헤드" 요청 필수.',rec:true,sat:5,fat:2,seat:'21A/21C (벌크헤드)',bookUrl:'https://www.singaporeair.com/en_UK/sg/plan-travel/book-a-flight/',checkUrl:'https://www.google.com/travel/flights?q=SIN+to+MLE&curr=SGD',email:'customercare@singaporeair.com'},
-  {id:'sq464',airline:'싱가포르항공',flight:'SQ464',dep:'23:50',arr:'02:45+1',dur:'4h55m',type:'직항',price:660,availability:'좌석 있음',availOk:true,note:'야간 직항. 기내 수면 가능. 새벽 도착 시 리조트 체크인 대기 가능 — 리조트에 얼리체크인 사전 요청 권장. 28주 미만 의사소견서 불필요.',rec:false,sat:4,fat:3,seat:'22A/22C (출구 열)',bookUrl:'https://www.singaporeair.com/en_UK/sg/plan-travel/book-a-flight/',checkUrl:'https://www.google.com/travel/flights?q=SIN+to+MLE&curr=SGD',email:'customercare@singaporeair.com'},
-  {id:'ml741',airline:'말레이시아항공',flight:'MH741',dep:'09:00',arr:'15:10',dur:'8h10m',type:'KUL 경유',price:520,availability:'확인 필요',availOk:false,note:'경유 1회. 총 이동 시간 길어 임산부 비추천. 최저가.',rec:false,sat:2,fat:5,seat:'경유편 특성상 연속 확보 어려움',bookUrl:'https://www.malaysiaairlines.com/',checkUrl:'https://www.google.com/travel/flights?q=SIN+to+MLE&curr=SGD',email:'customercare@malaysiaairlines.com'},
-  {id:'ek350',airline:'에미레이트',flight:'EK350',dep:'10:45',arr:'13:40+1',dur:'9h55m',type:'DXB 경유',price:590,availability:'좌석 있음',availOk:true,note:'두바이 경유. 비즈니스 라운지 가능. 장거리라 피로도 높음.',rec:false,sat:3,fat:4,seat:'출구 열 권장',bookUrl:'https://www.emirates.com/sg/english/',checkUrl:'https://www.google.com/travel/flights?q=SIN+to+MLE&curr=SGD',email:'customer@emirates.com'},
+  {id:'sq182',airline:'싱가포르항공',flight:'SQ182',dep:'07:30',arr:'10:25',dur:'4h55m',type:'직항',price:780,availability:'좌석 있음',availOk:true,note:'새벽 출발 오전 도착. 임산부에게 가장 쾌적. 벌크헤드 21A 추천. ✅ 28주 미만 의사소견서 불필요. 예약 후 SQ 콜센터(+65 6223 8888)에 전화해 "임산부 벌크헤드" 요청 필수.',rec:true,sat:5,fat:2,seat:'21A/21C (벌크헤드)',bookUrl:'https://www.skyscanner.com/transport/flights/sin/mle/260612/?adults=2&cabinclass=economy&preferDirects=true',checkUrl:'https://www.google.com/travel/flights/search?tfs=CBwQAhooagwIAhIIL20vc2lucW9yEgoyMDI2LTA2LTEycgwIAhIIL20vMDRsdHkSCjIwMjYtMDYtMTU&curr=SGD&hl=ko',email:'customercare@singaporeair.com'},
+  {id:'sq464',airline:'싱가포르항공',flight:'SQ464',dep:'23:50',arr:'02:45+1',dur:'4h55m',type:'직항',price:660,availability:'좌석 있음',availOk:true,note:'야간 직항. 기내 수면 가능. 새벽 도착 시 리조트 체크인 대기 가능 — 리조트에 얼리체크인 사전 요청 권장. 28주 미만 의사소견서 불필요.',rec:false,sat:4,fat:3,seat:'22A/22C (출구 열)',bookUrl:'https://www.skyscanner.com/transport/flights/sin/mle/260612/?adults=2&cabinclass=economy&preferDirects=true',checkUrl:'https://www.google.com/travel/flights/search?tfs=CBwQAhooagwIAhIIL20vc2lucW9yEgoyMDI2LTA2LTEycgwIAhIIL20vMDRsdHkSCjIwMjYtMDYtMTU&curr=SGD&hl=ko',email:'customercare@singaporeair.com'},
+  {id:'ml741',airline:'말레이시아항공',flight:'MH741',dep:'09:00',arr:'15:10',dur:'8h10m',type:'KUL 경유',price:520,availability:'확인 필요',availOk:false,note:'경유 1회. 총 이동 시간 길어 임산부 비추천. 최저가.',rec:false,sat:2,fat:5,seat:'경유편 특성상 연속 확보 어려움',bookUrl:'https://www.skyscanner.com/transport/flights/sin/mle/260612/?adults=2&cabinclass=economy',checkUrl:'https://www.google.com/travel/flights/search?tfs=CBwQAhooagwIAhIIL20vc2lucW9yEgoyMDI2LTA2LTEycgwIAhIIL20vMDRsdHkSCjIwMjYtMDYtMTU&curr=SGD&hl=ko',email:'customercare@malaysiaairlines.com'},
+  {id:'ek350',airline:'에미레이트',flight:'EK350',dep:'10:45',arr:'13:40+1',dur:'9h55m',type:'DXB 경유',price:590,availability:'좌석 있음',availOk:true,note:'두바이 경유. 비즈니스 라운지 가능. 장거리라 피로도 높음.',rec:false,sat:3,fat:4,seat:'출구 열 권장',bookUrl:'https://www.emirates.com/sg/english/book/flights/#/outbound?origin=SIN&destination=MLE&departureDate=2026-06-12&adults=2',checkUrl:'https://www.google.com/travel/flights/search?tfs=CBwQAhooagwIAhIIL20vc2lucW9yEgoyMDI2LTA2LTEycgwIAhIIL20vMDRsdHkSCjIwMjYtMDYtMTU&curr=SGD&hl=ko',email:'customer@emirates.com'},
 ];
 
 const RESORTS = [
-  {id:'sheraton',name:'쉐라톤 풀문 리조트 & 스파',tier:'VALUE',emoji:'🌊',price:750,priceRange:'USD 750~1,000',availability:'✅ 예약 가능 — 베이비문 패키지 5/31 마감',availOk:true,note:'공항 스피드보트 15분 (최단거리). 레스토랑 6개. 스파 전용 섬 운영. TripAdvisor 4.5/5 (3,930 리뷰). 태교여행 최적 추천.',babymoon:'산전 마사지 60분, 베이비문 웰컴 어메니티, 논알코올 웰컴 드링크, 임산부 베개 제공, 선셋 크루즈 포함',pros:['공항 15분 최단거리','스파 전용 섬','합리적 가격'],cons:['럭셔리감은 리츠칼튼 대비 덜함'],sat:4,fat:2,bookUrl:'https://www.marriott.com/reservation/rateListMenu.mi?propertyCode=MLEFM',checkUrl:'https://www.marriott.com/en-us/hotels/mlefm-sheraton-maldives-full-moon-resort-and-spa/overview/',bookingComUrl:'https://www.booking.com/hotel/mv/sheraton-maldives-full-moon-resort-spa.html',email:'maldives.sheraton@sheraton.com',tel:'+960 664 2010',emailSubject:'Babymoon Package Inquiry – June 2026',emailBody:`Dear Sheraton Full Moon Team,\n\nWe are a couple from Singapore planning our babymoon in June 2026. My wife is 20 weeks pregnant (single pregnancy, healthy).\n\nRequests:\n- Overwater Bungalow / Water Villa · 3 nights (check-in ~June 12, check-out June 15)\n- Babymoon package availability\n- Prenatal spa treatments\n- Non-alcoholic welcome amenities\n- Pregnancy pillow & body pillow\n- Speedboat transfer details\n\nPlease advise on availability and pricing.\n\nWarm regards,\nYoung & Ga-yeon (ohyoungouk@gmail.com)`},
-  {id:'ritz',name:'리츠칼튼 몰디브 파리 아일랜드',tier:'LUXURY',emoji:'👑',price:2061,priceRange:'USD 2,061~2,644',availability:'⚠️ 잔여 적음 — 즉시 예약 권장',availOk:false,note:'공항 스피드보트 45분. 프라이빗 수상 빌라 인피니티풀. 1:1 전담 버틀러. 임산부 배려 최상급. KAYAK 최근 최저 $2,644.',babymoon:'산전 전용 스파, 임산부 특수 베개·매트리스, 선셋 크루즈, 버틀러 24시간 케어',pros:['최상 프라이버시','전담 버틀러','프라이빗 인피니티풀'],cons:['가격 매우 높음 (3박 약 USD 6,000+)','공항에서 45분'],sat:5,fat:1,bookUrl:'https://www.ritzcarlton.com/en/hotels/maldives-fari-islands/',checkUrl:'https://www.ritzcarlton.com/en/hotels/maldives-fari-islands/',bookingComUrl:'https://www.booking.com/hotel/mv/the-ritz-carlton-maldives-fari-islands.html',email:'rc.mlebz.leads@ritzcarlton.com',tel:'+960 666 0101',emailSubject:'Babymoon Reservation – June 2026',emailBody:`Dear Ritz-Carlton Maldives,\n\nWe are newlyweds from Singapore planning our babymoon in June 2026. My wife is 20 weeks pregnant.\n\nRequests:\n- Overwater Villa · 3 nights (check-in ~June 12)\n- Babymoon package\n- Prenatal spa treatments\n- Non-alcoholic welcome set\n- Pregnancy pillow & body pillow\n- Low-vibration speedboat transfer\n\nPlease share availability and current pricing.\n\nWarm regards,\nYoung & Ga-yeon (ohyoungouk@gmail.com)`},
-  {id:'w',name:'W 몰디브',tier:'LUXURY',emoji:'✨',price:1500,priceRange:'USD 1,400~1,700',availability:'예약 가능',availOk:true,note:'트렌디한 분위기. 개인 수상 빌라 풀장.',babymoon:'스파 크레딧 USD 200, 웰컴 아메니티, 스노클링 장비 무료',pros:['힙한 분위기','개인 풀장'],cons:['파티 분위기 있음'],sat:4,fat:2,bookUrl:'https://www.marriott.com/reservation/rateListMenu.mi?propertyCode=MLEWH',checkUrl:'https://www.marriott.com/en-us/hotels/mlewh-w-maldives/overview/',bookingComUrl:'https://www.booking.com/hotel/mv/w-maldives.html',email:'wmaldives@whotels.com',tel:'+960 666 2222',emailSubject:'Romantic Stay Inquiry – June 2026',emailBody:`Hello W Maldives,\n\nWe are a couple from Singapore booking our babymoon in June 2026. My wife is 20 weeks pregnant.\n\nRequests:\n- WOW Suite / Overwater Bungalow · 3 nights (around June 12-15)\n- Prenatal spa treatments at AWAY Spa\n- Spa credit package details\n- Non-alcoholic welcome package\n\nPlease advise on availability.\n\nBest,\nYoung & Ga-yeon`},
+  {id:'sheraton',name:'쉐라톤 풀문 리조트 & 스파',tier:'VALUE',emoji:'🌊',price:750,priceRange:'USD 750~1,000',availability:'✅ 예약 가능 — 베이비문 패키지 5/31 마감',availOk:true,note:'공항 스피드보트 15분 (최단거리). 레스토랑 6개. 스파 전용 섬 운영. TripAdvisor 4.5/5 (3,930 리뷰). 태교여행 최적 추천.',babymoon:'산전 마사지 60분, 베이비문 웰컴 어메니티, 논알코올 웰컴 드링크, 임산부 베개 제공, 선셋 크루즈 포함',pros:['공항 15분 최단거리','스파 전용 섬','합리적 가격'],cons:['럭셔리감은 리츠칼튼 대비 덜함'],sat:4,fat:2,bookUrl:'https://www.marriott.com/reservation/availabilitySearch.mi?propertyCode=MLESI&numberOfRooms=1&numAdultsPerRoom=2&fromDate=06%2F12%2F2026&toDate=06%2F15%2F2026',checkUrl:'https://www.marriott.com/en-us/hotels/mlefm-sheraton-maldives-full-moon-resort-and-spa/overview/',bookingComUrl:'https://www.booking.com/hotel/mv/sheraton-maldives-full-moon-resort-spa.html?checkin=2026-06-12&checkout=2026-06-15&group_adults=2&no_rooms=1',email:'maldives.sheraton@sheraton.com',tel:'+960 664 2010',emailSubject:'Babymoon Package Inquiry – June 2026',emailBody:`Dear Sheraton Full Moon Team,\n\nWe are a couple from Singapore planning our babymoon in June 2026. My wife is 20 weeks pregnant (single pregnancy, healthy).\n\nRequests:\n- Overwater Bungalow / Water Villa · 3 nights (check-in ~June 12, check-out June 15)\n- Babymoon package availability\n- Prenatal spa treatments\n- Non-alcoholic welcome amenities\n- Pregnancy pillow & body pillow\n- Speedboat transfer details\n\nPlease advise on availability and pricing.\n\nWarm regards,\nYoung & Ga-yeon (ohyoungouk@gmail.com)`},
+  {id:'ritz',name:'리츠칼튼 몰디브 파리 아일랜드',tier:'LUXURY',emoji:'👑',price:2061,priceRange:'USD 2,061~2,644',availability:'⚠️ 잔여 적음 — 즉시 예약 권장',availOk:false,note:'공항 스피드보트 45분. 프라이빗 수상 빌라 인피니티풀. 1:1 전담 버틀러. 임산부 배려 최상급. KAYAK 최근 최저 $2,644.',babymoon:'산전 전용 스파, 임산부 특수 베개·매트리스, 선셋 크루즈, 버틀러 24시간 케어',pros:['최상 프라이버시','전담 버틀러','프라이빗 인피니티풀'],cons:['가격 매우 높음 (3박 약 USD 6,000+)','공항에서 45분'],sat:5,fat:1,bookUrl:'https://www.marriott.com/reservation/availabilitySearch.mi?propertyCode=MLERA&numberOfRooms=1&numAdultsPerRoom=2&fromDate=06%2F12%2F2026&toDate=06%2F15%2F2026',checkUrl:'https://www.ritzcarlton.com/en/hotels/mlera-the-ritz-carlton-maldives-fari-islands/overview/',bookingComUrl:'https://www.booking.com/hotel/mv/the-ritz-carlton-maldives-fari-islands.html?checkin=2026-06-12&checkout=2026-06-15&group_adults=2&no_rooms=1',email:'rc.mlebz.leads@ritzcarlton.com',tel:'+960 666 0101',emailSubject:'Babymoon Reservation – June 2026',emailBody:`Dear Ritz-Carlton Maldives,\n\nWe are newlyweds from Singapore planning our babymoon in June 2026. My wife is 20 weeks pregnant.\n\nRequests:\n- Overwater Villa · 3 nights (check-in ~June 12)\n- Babymoon package\n- Prenatal spa treatments\n- Non-alcoholic welcome set\n- Pregnancy pillow & body pillow\n- Low-vibration speedboat transfer\n\nPlease share availability and current pricing.\n\nWarm regards,\nYoung & Ga-yeon (ohyoungouk@gmail.com)`},
+  {id:'w',name:'W 몰디브',tier:'LUXURY',emoji:'✨',price:1500,priceRange:'USD 1,400~1,700',availability:'예약 가능',availOk:true,note:'트렌디한 분위기. 개인 수상 빌라 풀장.',babymoon:'스파 크레딧 USD 200, 웰컴 아메니티, 스노클링 장비 무료',pros:['힙한 분위기','개인 풀장'],cons:['파티 분위기 있음'],sat:4,fat:2,bookUrl:'https://www.marriott.com/reservation/availabilitySearch.mi?propertyCode=MLEWH&numberOfRooms=1&numAdultsPerRoom=2&fromDate=06%2F12%2F2026&toDate=06%2F15%2F2026',checkUrl:'https://www.marriott.com/en-us/hotels/mlewh-w-maldives/overview/',bookingComUrl:'https://www.booking.com/hotel/mv/w-maldives.html?checkin=2026-06-12&checkout=2026-06-15&group_adults=2&no_rooms=1',email:'wmaldives@whotels.com',tel:'+960 666 2222',emailSubject:'Romantic Stay Inquiry – June 2026',emailBody:`Hello W Maldives,\n\nWe are a couple from Singapore booking our babymoon in June 2026. My wife is 20 weeks pregnant.\n\nRequests:\n- WOW Suite / Overwater Bungalow · 3 nights (around June 12-15)\n- Prenatal spa treatments at AWAY Spa\n- Spa credit package details\n- Non-alcoholic welcome package\n\nPlease advise on availability.\n\nBest,\nYoung & Ga-yeon`},
   {id:'conrad',name:'콘래드 몰디브 랑갈리',tier:'LUXURY',emoji:'🐠',price:1800,priceRange:'USD 1,600~2,200',availability:'확인 필요',availOk:false,note:'세계 최초 수중 레스토랑 이쿠. 두 섬 구성.',babymoon:'수중 레스토랑 디너 포함, 스파 트리트먼트',pros:['수중 레스토랑','독특한 경험'],cons:['가장 멀리 있음'],sat:5,fat:3,bookUrl:'https://www.hilton.com/en/hotels/mlermci-conrad-maldives-rangali-island/',checkUrl:'https://www.hilton.com/en/hotels/mlermci-conrad-maldives-rangali-island/',bookingComUrl:'https://www.booking.com/hotel/mv/rangali.html',email:'reservations.maldives@conradhotels.com',tel:'+960 668 0629',emailSubject:'Babymoon Package Inquiry – June 2026',emailBody:`Dear Conrad Maldives,\n\nWe are a Singapore couple planning our babymoon in June 2026. My wife is ~20 weeks pregnant.\n\nRequests:\n- Deluxe Water Villa · 3 nights (mid-June 2026)\n- Ithaa Undersea Restaurant reservation for 2\n- Prenatal spa treatments\n- Non-alcoholic romance package\n\nPlease confirm availability and rates.\n\nYoung & Ga-yeon (ohyoungouk@gmail.com)`},
 ];
 
@@ -895,6 +895,27 @@ function renderResorts() {
   });
 }
 
+function buildActInfo(actId){
+  const panel=document.createElement('div');
+  panel.style.cssText='margin-top:8px;padding:10px 12px;background:#f0f9ff;border:1px solid #bae6fd;border-radius:10px;font-size:11px;line-height:1.6;display:none';
+  const a=ACTIVITIES.find(x=>x.id===actId);
+  if(a){
+    const stars='★'.repeat(a.preg)+'☆'.repeat(5-a.preg);
+    panel.style.display='block';
+    panel.innerHTML='<div style="font-weight:700;font-size:12px;margin-bottom:6px">'+a.emoji+' '+a.name+' — 상세 정보</div>'
+      +'<div style="display:grid;gap:3px">'
+      +'<div>💰 <b>가격:</b> USD '+a.price+' <span style="color:#64748b">'+a.unit+'</span></div>'
+      +'<div>📍 <b>장소:</b> '+(a.location||a.bookNote)+'</div>'
+      +'<div>⏰ <b>추천 시간:</b> '+(a.bestTime||'리조트 투어 데스크 문의')+'</div>'
+      +'<div>🏝 <b>예약:</b> '+(a.available||a.bookNote)+'</div>'
+      +'<div>🤰 <b>임산부 적합도:</b> <span style="color:#f59e0b">'+stars+'</span> '+a.preg+'/5점</div>'
+      +'<div style="margin-top:3px;color:#475569">'+a.desc+'</div>'
+      +'<div style="margin-top:4px">'+a.tags.map(t=>'<span class="tag">'+t+'</span>').join('')+'</div>'
+      +'</div>'
+      +'<a href="'+a.bookUrl+'" target="_blank" class="btn btn-primary" style="margin-top:8px;font-size:10px;padding:5px 12px;display:inline-flex">🎫 예약하기</a>';
+  }
+  return panel;
+}
 function renderPlanner() {
   const el=document.getElementById('planner'); if(!el)return; el.innerHTML='';
   const days=[{key:'d1',label:'Day 1 — 도착 & 체크인'},{key:'d2',label:'Day 2 — 본격 즐기기'},{key:'d3',label:'Day 3 — 마지막 & 귀환'}];
@@ -906,10 +927,28 @@ function renderPlanner() {
       const lbl=document.createElement('div');lbl.className='slot-lbl';lbl.textContent=s.label;
       const sel=document.createElement('select');
       PLAN_OPTS.forEach(o=>{const opt=document.createElement('option');opt.value=o.v;opt.textContent=o.l;if(state.plans[d.key][s.key].act===o.v)opt.selected=true;sel.appendChild(opt);});
-      sel.addEventListener('change',()=>{state.plans[d.key][s.key].act=sel.value;saveState();renderDash();});
+      const infoPanel=buildActInfo(state.plans[d.key][s.key].act);
+      sel.addEventListener('change',()=>{
+        state.plans[d.key][s.key].act=sel.value;saveState();renderDash();
+        const a=ACTIVITIES.find(x=>x.id===sel.value);
+        if(a){const stars='★'.repeat(a.preg)+'☆'.repeat(5-a.preg);
+          infoPanel.innerHTML='<div style="font-weight:700;font-size:12px;margin-bottom:6px">'+a.emoji+' '+a.name+' — 상세 정보</div>'
+            +'<div style="display:grid;gap:3px">'
+            +'<div>💰 <b>가격:</b> USD '+a.price+' <span style="color:#64748b">'+a.unit+'</span></div>'
+            +'<div>📍 <b>장소:</b> '+(a.location||a.bookNote)+'</div>'
+            +'<div>⏰ <b>추천 시간:</b> '+(a.bestTime||'리조트 투어 데스크 문의')+'</div>'
+            +'<div>🏝 <b>예약:</b> '+(a.available||a.bookNote)+'</div>'
+            +'<div>🤰 <b>임산부 적합도:</b> <span style="color:#f59e0b">'+stars+'</span> '+a.preg+'/5점</div>'
+            +'<div style="margin-top:3px;color:#475569">'+a.desc+'</div>'
+            +'<div style="margin-top:4px">'+a.tags.map(t=>'<span class="tag">'+t+'</span>').join('')+'</div>'
+            +'</div>'
+            +'<a href="'+a.bookUrl+'" target="_blank" class="btn btn-primary" style="margin-top:8px;font-size:10px;padding:5px 12px;display:inline-flex">🎫 예약하기</a>';
+          infoPanel.style.display='block';
+        } else { infoPanel.style.display='none'; }
+      });
       const ta=document.createElement('textarea');ta.placeholder='메모... (예: 가연이 피곤하면 건너뛰기)';ta.value=state.plans[d.key][s.key].note;
       ta.addEventListener('input',()=>{state.plans[d.key][s.key].note=ta.value;saveState();});
-      slot.appendChild(lbl);slot.appendChild(sel);slot.appendChild(ta);
+      slot.appendChild(lbl);slot.appendChild(sel);slot.appendChild(infoPanel);slot.appendChild(ta);
       slot.appendChild(renderFeedbackBox('plan_'+d.key+'_'+s.key,'이 시간대 의견...'));
       el.appendChild(slot);
     });
